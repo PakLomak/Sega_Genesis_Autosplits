@@ -9,16 +9,16 @@ state ("Fusion") //RAM 0x00 == "Fusion.exe", 0x2A52D4, 0x00;
 	byte demoTimer:		"Fusion.exe", 0x2A52D4, 0x0F13E;
 	byte demoTimer2:	"Fusion.exe", 0x2A52D4, 0x0F13F;
 }
-state("mednafen", "1.26.1") //RAM 0x00 == 0x17D3F80
+state("mednafen", "1.27.1") //RAM 0x00 == 0x16EEB80
 {
-	byte start: 		"mednafen.exe", 0x17DB1E4; //7264
-	byte start2:		"mednafen.exe", 0x17DB1E5; //7265
-	byte sword:		"mednafen.exe", 0x17DB21C; //729C
-	byte stage:		"mednafen.exe", 0x17DBDA6; //7E26
-	byte hp:		"mednafen.exe", 0x17DBE86; //7F06
-	byte end:		"mednafen.exe", 0x17E2F26; //EFA6
-	byte demoTimer:		"mednafen.exe", 0x17E30BE; //F13E
-	byte demoTimer2:	"mednafen.exe", 0x17E30BF; //F13F
+	byte start: 		"mednafen.exe", 0x16F5DE4; //7264
+	byte start2:		"mednafen.exe", 0x16F5DE5; //7265
+	byte sword:		"mednafen.exe", 0x16F5E1C; //729C
+	byte stage:		"mednafen.exe", 0x16F69A6; //7E26
+	byte hp:		"mednafen.exe", 0x16F6A86; //7F06
+	byte end:		"mednafen.exe", 0x16FDB26; //EFA6
+	byte demoTimer:		"mednafen.exe", 0x16FDCBE; //F13E
+	byte demoTimer2:	"mednafen.exe", 0x16FDCBF; //F13F
 	
 }
 state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
@@ -34,8 +34,8 @@ state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
 }
 init
 {
-    if (modules.First().ModuleMemorySize == 99102720)
-        version = "1.26.1";
+    if (modules.First().ModuleMemorySize == 90116096)
+        version = "1.27.1";
     else if (modules.First().ModuleMemorySize == 93294592)
         version = "0.9.48";
 }
