@@ -10,17 +10,17 @@ state ("Fusion") //RAM 0x00 == "Fusion.exe", 0x2A52D4, 0x00;
 	byte latter2:		"Fusion.exe", 0x2A52D4, 0x0B1F4;
 	byte scene:			"Fusion.exe", 0x2A52D4, 0x0A003;
 }
-state("mednafen", "1.26.1") //RAM 0x00 == 0x17D3F80
+state("mednafen", "1.27.1") //RAM 0x00 == 0x16EEB80
 {
-	byte stage: 		"mednafen.exe", 0x17E39C8; //FA48
-	byte player:		"mednafen.exe", 0x17E1683; //D703
-	byte scroling:		"mednafen.exe", 0x17DE068; //A0E8
-	byte scroling2:		"mednafen.exe", 0x17DE069; //A0E9
-	byte movie:			"mednafen.exe", 0x17DE059; //A0D9
-	byte animation3:	"mednafen.exe", 0x17DF103; //B183
-	byte latter:		"mednafen.exe", 0x17DF118; //B198
-	byte Decay:			"mednafen.exe", 0x17DF174; //B1F4
-	byte scene:			"mednafen.exe", 0x17DDF83; //A003
+	byte stage: 		"mednafen.exe", 0x16FE5C8; //FA48
+	byte player:		"mednafen.exe", 0x16FC283; //D703
+	byte scroling:		"mednafen.exe", 0x16F8C68; //A0E8
+	byte scroling2:		"mednafen.exe", 0x16F8C69; //A0E9
+	byte movie:			"mednafen.exe", 0x16F8C59; //A0D9
+	byte animation3:	"mednafen.exe", 0x16F9D03; //B183
+	byte latter:		"mednafen.exe", 0x16F9D18; //B198
+	byte Decay:			"mednafen.exe", 0x16F9D74; //B1F4
+	byte scene:			"mednafen.exe", 0x16F8B83; //A003
 }
 state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
 {
@@ -64,8 +64,8 @@ split
 }
 init
 {
-	if (modules.First().ModuleMemorySize == 99102720)
-        version = "1.26.1";
+	if (modules.First().ModuleMemorySize == 90116096)
+        version = "1.27.1";
     else if (modules.First().ModuleMemorySize == 93294592)
         version = "0.9.48";
 	vars.five = 0;
