@@ -4,11 +4,11 @@ state ("Fusion") //RAM 0x00 == "Fusion.exe", 0x2A52D4, 0x00;
 	byte stage:			"Fusion.exe", 0x2A52D4, 0x0FB2B;
 	byte orb:			"Fusion.exe", 0x2A52D4, 0x0BCD3;
 }
-state("mednafen", "1.26.1") //RAM 0x00 == 0x17D3F80
+state("mednafen", "1.27.1") //RAM 0x00 == 0x16EEB80
 {
-	byte move: 			"mednafen.exe", 0x17DD051; //90D1
-	byte stage:			"mednafen.exe", 0x17E3AAB; //FB2B
-	byte orb:			"mednafen.exe", 0x17DFC53; //BCD3
+	byte move: 			"mednafen.exe", 0x16F7C51; //90D1
+	byte stage:			"mednafen.exe", 0x16FE6AB; //FB2B
+	byte orb:			"mednafen.exe", 0x16FA853; //BCD3
 }
 state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
 {
@@ -18,8 +18,8 @@ state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
 }
 init
 {
-    if (modules.First().ModuleMemorySize == 99102720)
-        version = "1.26.1";
+    if (modules.First().ModuleMemorySize == 90116096)
+        version = "1.27.1";
     else if (modules.First().ModuleMemorySize == 93294592)
         version = "0.9.48";
 }
