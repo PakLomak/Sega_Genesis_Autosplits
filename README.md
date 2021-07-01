@@ -3,7 +3,7 @@
 - [LiveSplit](https://github.com/LiveSplit/LiveSplit/releases "LiveSplit on github")
 - [FAQ-Mednafen](https://github.com/PakLomak/FAQ-Mednafen "Link on github")
 ## Supported emulators
-- Mednafen [0.9.48](https://forum.fobby.net/index.php?t=msg&goto=5224&#msg_5224 "Download") [1.26.1](https://mednafen.github.io/releases "Download")
+- Mednafen [0.9.48](https://forum.fobby.net/index.php?t=msg&goto=5224&#msg_5224 "Download") [1.27.1](https://mednafen.github.io/releases "Download")
 - Kega Fusion [3.64](https://segaretro.org/Kega_Fusion "Download")
 ## Installation
 1. Скачайте .asl файл
