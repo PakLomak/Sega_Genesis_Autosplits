@@ -25,7 +25,7 @@ init
 }
 start
 {
-	return (old.move == 0x03 && current.move == 0x04);
+	return (old.move == 0x03 && current.move == 0x04 && current.stage == 0x00);
 }
 split
 {
