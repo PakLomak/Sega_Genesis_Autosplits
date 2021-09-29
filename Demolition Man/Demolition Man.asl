@@ -51,7 +51,7 @@ split
 }
 reset
 {
-    return (current.stage == 0x00 && current.lives == 0x00 && current.xz == 0x00 && current.reset == 0x00);
+    //return (current.stage == 0x00 && current.lives == 0x00 && current.xz == 0x00 && current.reset == 0x00);
 }
 startup
 {
