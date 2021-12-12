@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Run version="1.7.0">
+  <GameIcon />
+  <GameName>Pitfall: The Mayan Adventure</GameName>
+  <CategoryName>Genesis Any%</CategoryName>
+  <LayoutPath>
+  </LayoutPath>
+  <Metadata>
+    <Run id="" />
+    <Platform usesEmulator="False">
+    </Platform>
+    <Region>
+    </Region>
+    <Variables />
+  </Metadata>
+  <Offset>00:00:00</Offset>
+  <AttemptCount>0</AttemptCount>
+  <AttemptHistory>
+    <Attempt id="1" started="12/12/2021 01:41:36" isStartedSynced="True" ended="12/12/2021 01:41:51" isEndedSynced="True" />
+    <Attempt id="2" started="12/12/2021 01:42:07" isStartedSynced="True" ended="12/12/2021 01:47:06" isEndedSynced="True" />
+    <Attempt id="3" started="12/12/2021 01:48:19" isStartedSynced="True" ended="12/12/2021 01:48:21" isEndedSynced="True" />
+    <Attempt id="4" started="12/12/2021 01:50:47" isStartedSynced="True" ended="12/12/2021 02:04:18" isEndedSynced="True">
+      <RealTime>00:13:31.0740000</RealTime>
+    </Attempt>
+  </AttemptHistory>
+  <Segments>
+    <Segment>
+      <Name>Ceiba Jungle</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best">
+          <RealTime>00:01:18.4500000</RealTime>
+        </SplitTime>
+      </SplitTimes>
+      <BestSegmentTime>
+        <RealTime>00:01:10.5100000</RealTime>
+      </BestSegmentTime>
+      <SegmentHistory>
+        <Time id="2">
+          <RealTime>00:01:26.1130000</RealTime>
+        </Time>
+        <Time id="4">
+          <RealTime>00:01:18.9710000</RealTime>
+        </Time>
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>Xibalba Falls</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best">
+          <RealTime>00:02:04.6500000</RealTime>
+        </SplitTime>
+      </SplitTimes>
+      <BestSegmentTime>
+        <RealTime>00:00:43.0500000</RealTime>
+      </BestSegmentTime>
+      <SegmentHistory>
+        <Time id="2">
+          <RealTime>00:01:36.5990000</RealTime>
+        </Time>
+        <Time id="4">
+          <RealTime>00:01:00.7460000</RealTime>
+        </Time>
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>Tazamul Mines</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best">
+          <RealTime>00:03:14.6400000</RealTime>
+        </SplitTime>
+      </SplitTimes>
+      <BestSegmentTime>
+        <RealTime>00:01:08.3900000</RealTime>
+      </BestSegmentTime>
+      <SegmentHistory>
+        <Time id="4">
+          <RealTime>00:01:21.9180000</RealTime>
+        </Time>
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>Lost City of Copan</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best">
+          <RealTime>00:04:24.6500000</RealTime>
+        </SplitTime>
+      </SplitTimes>
+      <BestSegmentTime>
+        <RealTime>00:01:03.8500000</RealTime>
+      </BestSegmentTime>
+      <SegmentHistory>
+        <Time id="4">
+          <RealTime>00:01:14.0970000</RealTime>
+        </Time>
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>Copan Temple</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best">
+          <RealTime>00:05:55.7700000</RealTime>
+        </SplitTime>
+      </SplitTimes>
+      <BestSegmentTime>
+        <RealTime>00:01:21.8200000</RealTime>
+      </BestSegmentTime>
+      <SegmentHistory>
+        <Time id="4">
+          <RealTime>00:01:30.0710000</RealTime>
+        </Time>
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>Lakamul Rainforest</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best">
+          <RealTime>00:06:45.0300000</RealTime>
+        </SplitTime>
+      </SplitTimes>
+      <BestSegmentTime>
+        <RealTime>00:00:37.2100000</RealTime>
+      </BestSegmentTime>
+      <SegmentHistory>
+        <Time id="4">
+          <RealTime>00:00:45.5270000</RealTime>
+        </Time>
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>Yaxchilan Lagoon</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best">
+          <RealTime>00:07:26.4000000</RealTime>
+        </SplitTime>
+      </SplitTimes>
+      <BestSegmentTime>
+        <RealTime>00:00:39.9000000</RealTime>
+      </BestSegmentTime>
+      <SegmentHistory>
+        <Time id="4">
+          <RealTime>00:00:59.5130000</RealTime>
+        </Time>
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>Runaway Minecar</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory>
+        <Time id="0" />
+        <Time id="4" />
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>Tikal Ruins</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best">
+          <RealTime>00:10:48.7200000</RealTime>
+        </SplitTime>
+      </SplitTimes>
+      <BestSegmentTime>
+        <RealTime>00:03:15.5700000</RealTime>
+      </BestSegmentTime>
+      <SegmentHistory>
+        <Time id="4">
+          <RealTime>00:03:33.8580000</RealTime>
+        </Time>
+        <Time id="0">
+          <RealTime>00:03:15.5700000</RealTime>
+        </Time>
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>Temple of Tikal</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best">
+          <RealTime>00:11:38.8000000</RealTime>
+        </SplitTime>
+      </SplitTimes>
+      <BestSegmentTime>
+        <RealTime>00:00:48.9500000</RealTime>
+      </BestSegmentTime>
+      <SegmentHistory>
+        <Time id="4">
+          <RealTime>00:00:54.5370000</RealTime>
+        </Time>
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>Warrior Spirit</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best">
+          <RealTime>00:12:23.8500000</RealTime>
+        </SplitTime>
+      </SplitTimes>
+      <BestSegmentTime>
+        <RealTime>00:00:40.8200000</RealTime>
+      </BestSegmentTime>
+      <SegmentHistory>
+        <Time id="4">
+          <RealTime>00:00:51.8360000</RealTime>
+        </Time>
+      </SegmentHistory>
+    </Segment>
+  </Segments>
+  <AutoSplitterSettings />
+</Run>
