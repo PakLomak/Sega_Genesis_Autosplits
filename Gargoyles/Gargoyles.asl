@@ -48,12 +48,12 @@ start
 split
 {
     if (settings["All_levels"] && current.lvl == old.lvl + 1) return true;
-    if (old.lvl == 0x10 && current.lvl == 0x15) return true; //Subterranean Terror
     if (settings["levels"])
     {
         if (old.lvl == 0x03 && current.lvl == 0x04) return true; //Castle Wyvern
         if (old.lvl == 0x07 && current.lvl == 0x08) return true; //Siege of the Rookery
         if (old.lvl == 0x0B && current.lvl == 0x10) return true; //Stone and Steel
+	if (old.lvl == 0x10 && current.lvl == 0x15) return true; //Subterranean Terror
         if (old.lvl == 0x19 && current.lvl == 0x1B) return true; //The Forge
     }
     //if (current.lvl == 0x1B && old.bossHP != 0x00 && current.bossHP == 0x00) return true; //Demona
