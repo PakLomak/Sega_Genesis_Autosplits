@@ -7,7 +7,7 @@
 - Mednafen [0.9.48](https://forum.fobby.net/index.php?t=msg&goto=5224&#msg_5224 "Download") [1.27.1](https://mednafen.github.io/releases "Download")
 - Kega Fusion [3.64](https://segaretro.org/Kega_Fusion "Download")
 - Retroarch [BlastEm 0.6.3-pre](https://buildbot.libretro.com/stable/ "Download")
-## Installation [Picture](https://imgur.com/a/es27LEc)
+## Installation
 1. Скачайте .asl файл
 2. Откройте LiveSplit
 3. Edit your layout...
@@ -15,3 +15,4 @@
 5. Выберите путь к файлу ASL, нажав кнопку "Browse"..."
 6. Выберите необходимый AutoSplitter
 7. Сохраните изменения и наслаждайтесь!
+8. [Picture](https://imgur.com/a/es27LEc)
