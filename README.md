@@ -8,6 +8,7 @@
 - Kega Fusion [3.64](https://segaretro.org/Kega_Fusion "Download")
 - Retroarch [BlastEm 0.6.3-pre](https://buildbot.libretro.com/stable/ "Download")
 ## Installation
+0. [Picture](https://imgur.com/a/es27LEc)
 1. Скачайте .asl файл
 2. Откройте LiveSplit
 3. Edit your layout...
@@ -15,4 +16,3 @@
 5. Выберите путь к файлу ASL, нажав кнопку "Browse"..."
 6. Выберите необходимый AutoSplitter
 7. Сохраните изменения и наслаждайтесь!
-8. [Picture](https://imgur.com/a/es27LEc)
