@@ -8,7 +8,7 @@
 - Kega Fusion [3.64](https://segaretro.org/Kega_Fusion "Download")
 - Retroarch [BlastEm 0.6.3-pre](https://buildbot.libretro.com/stable/ "Download")
 ## Installation
-0. [Picture](https://imgur.com/a/es27LEc)
+0. [Picture](https://github.com/PakLomak/Sega_Genesis_Autosplits/blob/main/How%20add%20asl.jpg)
 1. Скачайте .asl файл
 2. Откройте LiveSplit
 3. Edit your layout...
