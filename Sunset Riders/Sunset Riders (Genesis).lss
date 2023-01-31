@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Run version="1.7.0">
+  <GameIcon />
+  <GameName>Sunset Riders (Genesis)</GameName>
+  <CategoryName>
+  </CategoryName>
+  <LayoutPath>
+  </LayoutPath>
+  <Metadata>
+    <Run id="" />
+    <Platform usesEmulator="True">Sega Genesis</Platform>
+    <Region>USA / NTSC</Region>
+    <Variables />
+  </Metadata>
+  <Offset>00:00:00</Offset>
+  <AttemptCount>0</AttemptCount>
+  <AttemptHistory />
+  <Segments>
+    <Segment>
+      <Name>1-1</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Simon Greedwell</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>2-1</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Paco Loco</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>3-1</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Chief Wigwam</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>4-1</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Sir Richard Rose</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+  </Segments>
+  <AutoSplitterSettings />
+</Run>
