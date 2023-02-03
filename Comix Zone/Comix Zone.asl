@@ -12,6 +12,7 @@ state ("Fusion")
     ushort waterTimer: 		"Fusion.exe", 0x2A52D4, 0x05e08;
 	byte switcher: 			"Fusion.exe", 0x2A52D4, 0x0606c;
 	byte ending: 			"Fusion.exe", 0x2A52D4, 0x0bfd6;
+    byte dead:              "Fusion.exe", 0x2A52D4, 0x0BF04;
 }
 state("mednafen", "1.26.1") //RAM 0x00 == 0x17D3F80
 {
@@ -31,6 +32,7 @@ state("mednafen", "1.26.1") //RAM 0x00 == 0x17D3F80
     byte yPos : "mednafen.exe", 0x17D96C4;//0x005744
     byte yPos2 : "mednafen.exe", 0x17D96C5;//0x005745
     byte waterPos : "mednafen.exe", 0x17D9D63;//0x005de3
+    byte dead: "mednafen.exe", 0x17DFE84;//0x0BF04
 }
 state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
 {
@@ -50,6 +52,7 @@ state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
     byte yPos : "mednafen.exe", 0x1351484;//0x005744
     byte yPos2 : "mednafen.exe", 0x1351485;//0x005745
     byte waterPos : "mednafen.exe", 0x1351B23;//0x005de3
+    byte dead: "mednafen.exe", 0x1357C44;//0x0BF04
 }
 state("mednafen", "1.27.1") //RAM 0x00 == 0x16EEB80
 {
@@ -69,6 +72,7 @@ state("mednafen", "1.27.1") //RAM 0x00 == 0x16EEB80
     byte yPos : "mednafen.exe", 0x16F42C4;//0x005744
     byte yPos2 : "mednafen.exe", 0x16F42C5;//0x005745
     byte waterPos : "mednafen.exe", 0x16F4963;//0x005de3
+    byte dead: "mednafen.exe", 0x16FAA84;//0x0BF04
 }
 state("retroarch", "1.9.8") //RAM 0x00 == "blastem_libretro.dll", 0x173B18, 0x198, 0x00; Little endian!
 {
@@ -88,6 +92,7 @@ state("retroarch", "1.9.8") //RAM 0x00 == "blastem_libretro.dll", 0x173B18, 0x19
     byte yPos : "blastem_libretro.dll", 0x173B18, 0x198, 0x005745;//0x005744
     byte yPos2 : "blastem_libretro.dll", 0x173B18, 0x198, 0x005744;//0x005745
     byte waterPos : "blastem_libretro.dll", 0x173B18, 0x198, 0x005de2;//0x005de3
+    byte dead: "blastem_libretro.dll", 0x173B18, 0x198, 0x0BF05;//0x0BF04
 }
 update
 {
@@ -120,12 +125,12 @@ split
     if (current.demo != 1)
     {
         //if (old.page_scroll == 0x80 && current.page_scroll == 0x52) return true;
-        if (current.page_sheet == 0xBE && current.page_sheet2 == 0xC4 && old.page_sheet2 != 0xC4 && current.stage != 5) return true;
+        if (current.page_sheet == 0xBE && current.page_sheet2 == 0xC4 && old.page_sheet2 != 0xC4 && current.stage != 5 && current.dead != 0xFF) return true;
         if (current.stage == 5 && current.page == 2 && current.panelID == 0)
         {
             if (current.waterTimer != 0 && current.yPos == 3 && current.yPos2 < 0x50)
             {
-                if ((current.animation == 0xDA && old.animation == 0xD6) || current.waterPos > old.waterPos)
+                if (current.waterPos > old.waterPos)
                     return true;
             }
             if (current.ending == 3 && old.ending != 3)
