@@ -46,21 +46,23 @@ init
         version = "1.29.0";
     else if (modules.First().ModuleMemorySize == 93294592)
         version = "0.9.48";
-        vars._1sp = true;
+        vars.sp = true;
 }
 start
 {
     if (current.screen2 == 0xD8 && old.start != 0xF6 && current.start == 0x0F6 && current.input == 0xFF)
     {
-        return vars._1sp == true;
+        vars.sp = true;
+        return true;
     }
 }
 split
 {
     if (current.screen == 0x5B && old.screen2 != 0x54 && current.screen2 == 0x54) return true;
-    if (current.screen == 0x1E && old.screen2 != 0xCA && current.screen2 == 0xCA && vars._1sp == true)
+    if (current.screen == 0x1E && old.screen2 != 0xCA && current.screen2 == 0xCA && vars.sp == true)
     {
-        return vars._1sp == false;
+        vars.sp = false;
+        return true;
     }
 }
 reset
