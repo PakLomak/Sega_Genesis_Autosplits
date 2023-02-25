@@ -1,44 +1,47 @@
 state("Fusion", "3.64")
 {
-byte screen: "Fusion.exe", 0x2A52D4, 0xFFFE;
-byte screen2: "Fusion.exe", 0x2A52D4, 0xFFFF;
+byte level: "Fusion.exe", 0x2A52D4, 0xDD21;
 byte start: "Fusion.exe", 0x2A52D4, 0xFFF5;
 byte input: "Fusion.exe", 0x2A52D4, 0xDD3C;
+byte bosshp: "Fusion.exe", 0x2A52D4, 0xA36F;
+byte bubbles: "Fusion.exe", 0x2A52D4, 0xDD1D;
+byte screen: "Fusion.exe", 0x2A52D4, 0xFFFF;
 }
 state("Mednafen", "0.9.48")
 {
-byte screen: "mednafen.exe", 0x135BD3E;
-byte screen2: "mednafen.exe", 0x135BD3F;
+byte level: "mednafen.exe", 0x1359A61;
 byte start: "mednafen.exe", 0x135BD35;
 byte input: "mednafen.exe", 0x1359A7C;
+byte bosshp: "mednafen.exe", 0x13560AF;
+byte bubbles: "mednafen.exe", 0x1359A5D;
+byte screen: "mednafen.exe", 0x135BD3F;
 }
 state("Mednafen", "1.29.0")
 {
-byte screen: "mednafen.exe", 0x1654B7E;
-byte screen2: "mednafen.exe", 0x1654B7F;
+byte level: "mednafen.exe", 0x16528A1;
 byte start: "mednafen.exe", 0x1654B75;
 byte input: "mednafen.exe", 0x16528BC;
-}
-state("Retroarch", "1.14.0 BlastEm")
-{
-byte screen: "blastem_libretro.dll", 0x172B18, 0x198, 0xFFFF;
-byte screen2: "blastem_libretro.dll", 0x172B18, 0x198, 0xFFFE;
-byte start: "blastem_libretro.dll", 0x172B18, 0x198, 0xFFF4;
-byte input: "blastem_libretro.dll", 0x172B18, 0x198, 0xDD3D;
+byte bosshp: "mednafen.exe", 0x164EEEF;
+byte bubbles: "mednafen.exe", 0x165289D;
+byte screen: "mednafen.exe", 0x1654B7F;
 }
 state("Retroarch", "1.14.0 GX")
 {
-byte screen: "genesis_plus_gx_libretro.dll", 0x06A8990, 0xFFFF;
-byte screen2: "genesis_plus_gx_libretro.dll", 0x06A8990, 0xFFFE;
+byte level: "genesis_plus_gx_libretro.dll", 0x06A8990, 0xDD20;
 byte start: "genesis_plus_gx_libretro.dll", 0x06A8990, 0xFFF4;
 byte input: "genesis_plus_gx_libretro.dll", 0x06A8990, 0xDD3D;
+byte bosshp: "genesis_plus_gx_libretro.dll", 0x06A8990, 0xA36E;
+byte bubbles: "genesis_plus_gx_libretro.dll", 0x06A8990, 0xDD1C;
+byte screen: "genesis_plus_gx_libretro.dll", 0x06A8990, 0xFFFE;
 }
 state("emuhawk", "1.13.2")
 {
-byte screen: "libgenplusgx.dll", 0x000062D8, 0xFFFF;
-byte screen2: "libgenplusgx.dll", 0x000062D8, 0xFFFE;
+byte level: "libgenplusgx.dll", 0x000062D8, 0xDD20;
 byte start: "libgenplusgx.dll", 0x000062D8, 0xFFF4;
 byte input: "libgenplusgx.dll", 0x000062D8, 0xDD3D;
+byte bosshp: "libgenplusgx.dll", 0x000062D8, 0xA36E;
+byte bubbles: "libgenplusgx.dll", 0x000062D8, 0xDD1C;
+byte screen: "libgenplusgx.dll", 0x000062D8, 0xFFFE;
 }
 init
 {
@@ -46,32 +49,20 @@ init
         version = "1.29.0";
     else if (modules.First().ModuleMemorySize == 93294592)
         version = "0.9.48";
-        vars.sp = true;
 }
 start
 {
-    if (current.screen2 == 0xD8 && old.start != 0xF6 && current.start == 0x0F6 && current.input == 0xFF)
-    {
-        vars.sp = true;
-        return true;
-    }
+    return (current.screen == 0xD8 && old.start != 0xF6 && current.start == 0x0F6 && current.input == 0xFF);
 }
 split
 {
-    if (current.screen == 0x5B && old.screen2 != 0x54 && current.screen2 == 0x54) return true;
-    if (current.screen == 0x1E && old.screen2 != 0xCA && current.screen2 == 0xCA && vars.sp == true)
-    {
-        vars.sp = false;
-        return true;
-    }
+    if (current.level != 0x03 && current.level == old.level + 1) return true;
+    if (current.level == 0x0D && current.bosshp == 0xFF && current.bubbles > old.bubbles) return true;
+    
 }
 reset
 {
-    if (current.screen == 0x59)
-    {
-        if (current.screen2 == 0xC4) return true;
-        if (current.screen2 == 0xB4) return true;
-    }
+    if (current.screen == 0xC4 || current.screen == 0xB4) return true;
 }
 startup
 {
