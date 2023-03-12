@@ -102,6 +102,18 @@ split
         return false;
     if (old.level == 0x12)
         return current.level == 0x13;
+    if (settings["flag"])   {return current.flagState == 0x18 && (current.manualEndLevel == 0x50 && old.manualEndLevel != 0x50 || current.timerEndLevel == 0x00 && old.timerEndLevel != 0x00 && current.flagAutoEndLevel == 0xFF);}
+    if (settings["Level"])
+    {
+        if (old.level == 0x01 && current.level == 0x02) return true;
+        if (old.level == 0x04 && current.level == 0x05) return true;
+        if (old.level == 0x08 && current.level == 0x09) return true;
+        if (old.level == 0x0B && current.level == 0x0C) return true;
+        if (old.level == 0x0E && current.level == 0x0F) return true;
+        if (old.level == 0x10 && current.level == 0x11) return true;
+        if (old.level == 0x13 && current.level == 0x14) return true;
+        if (old.level == 0x14 && current.level == 0x15) return true;
+    }
     if (current.level == 0x15)
         return (current.flagState == 0x2C && current.screenBright == 0xFF && current.flagAutoEndLevel == 0xFF && old.flagAutoEndLevel != 0xFF);
 }
@@ -114,6 +126,9 @@ startup
 	refreshRate = 70;
 	settings.Add("main", false, "AutoSplitter for Zero the Kamikaze Squirrel by Xanders08");
 	settings.Add("main3", false, "--https://www.twitch.tv/Xanders08", "main");
+    settings.Add("options", true, "Options");
+	settings.Add("flag", true, "Split by after Flag", "options");
+	settings.Add("Level", false, "Split by Level", "options");
 }
 init
 {
