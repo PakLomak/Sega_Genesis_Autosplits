@@ -12,6 +12,7 @@ byte timerEndLevel: "blastem_libretro.dll", 0x172B18, 0x198, 0x1038;
 byte flagAutoEndLevel: "blastem_libretro.dll", 0x172B18, 0x198, 0x1081;
 byte screenBright: "blastem_libretro.dll", 0x172B18, 0x198, 0x8DD2;
 byte demo: "blastem_libretro.dll", 0x172B18, 0x198, 0x100A;
+byte end: "blastem_libretro.dll", 0x172B18, 0x198, 0x1105;
 }
 state("ralibretro") //RAM 0x00 == "genesis_plus_gx_libretro.dll", 0x00298720, 0x0; Little endian!
 {
@@ -41,6 +42,7 @@ byte timerEndLevel: "Fusion.exe", 0x2A52D4, 0x1039;
 byte flagAutoEndLevel: "Fusion.exe", 0x2A52D4, 0x1080;
 byte screenBright: "Fusion.exe", 0x2A52D4, 0x8DD3;
 byte demo: "Fusion.exe", 0x2A52D4, 0x100B;
+byte end: "Fusion.exe", 0x2A52D4, 0x1104;
 }
 state("Mednafen", "0.9.48")
 {
@@ -56,6 +58,7 @@ byte timerEndLevel: "mednafen.exe", 0x134CD79;
 byte flagAutoEndLevel: "mednafen.exe", 0x134CDC0;
 byte screenBright: "mednafen.exe", 0x1354B13;
 byte demo: "mednafen.exe", 0x134CD4B;
+byte end: "mednafen.exe", 0x134CE44;
 }
 state("Mednafen", "1.29.0")
 {
@@ -71,6 +74,7 @@ byte timerEndLevel: "mednafen.exe", 0x1645BB9;
 byte flagAutoEndLevel: "mednafen.exe", 0x1645C00;
 byte screenBright: "mednafen.exe", 0x164D953;
 byte demo: "mednafen.exe", 0x1645B8B;
+byte end: "mednafen.exe", 0x1645C84;
 }
 state("emuhawk", "1.13.2")
 {
@@ -86,6 +90,7 @@ byte timerEndLevel: "libgenplusgx.dll", 0x000062D8, 0x1038;
 byte flagAutoEndLevel: "libgenplusgx.dll", 0x000062D8, 0x1081;
 byte screenBright: "libgenplusgx.dll", 0x000062D8, 0x8DD2;
 byte demo: "libgenplusgx.dll", 0x000062D8, 0x100A;
+byte end: "libgenplusgx.dll", 0x000062D8, 0x1105;
 }
 start
 {
@@ -98,11 +103,11 @@ start
 }
 split
 {
-    if (current.demo == 0x01)
+    /*if (current.demo == 0x01)
         return false;
     if (old.level == 0x12)
-        return current.level == 0x13;
-    if (settings["flag"])   {return current.flagState == 0x18 && (current.manualEndLevel == 0x50 && old.manualEndLevel != 0x50 || current.timerEndLevel == 0x00 && old.timerEndLevel != 0x00 && current.flagAutoEndLevel == 0xFF);}
+        return current.level == 0x13;*/
+    if (settings["flag"])   {if (current.flagState == 0x18 && current.manualEndLevel == 0x50 && old.manualEndLevel != 0x50 || current.timerEndLevel == 0x00 && old.timerEndLevel != 0x00 && current.flagAutoEndLevel == 0xFF) return true;}
     if (settings["Level"])
     {
         if (old.level == 0x01 && current.level == 0x02) return true;
@@ -114,8 +119,7 @@ split
         if (old.level == 0x13 && current.level == 0x14) return true;
         if (old.level == 0x14 && current.level == 0x15) return true;
     }
-    if (current.level == 0x15)
-        return (current.flagState == 0x2C && current.screenBright == 0xFF && current.flagAutoEndLevel == 0xFF && old.flagAutoEndLevel != 0xFF);
+    if (current.level == 0x15 && current.flagState == 0x2C && current.screenBright == 0xFF && old.end == 0x00 && current.end >= 0x01) return true;
 }
 reset
 {
