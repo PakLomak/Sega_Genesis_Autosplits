@@ -107,7 +107,10 @@ split
         return false;
     if (old.level == 0x12)
         return current.level == 0x13;*/
-    if (settings["flag"])   {if (current.flagState == 0x18 && current.manualEndLevel == 0x50 && old.manualEndLevel != 0x50 || current.timerEndLevel == 0x00 && old.timerEndLevel != 0x00 && current.flagAutoEndLevel == 0xFF) return true;}
+    if (settings["flag"] && current.level != 0x03 && current.level != 0x06 && current.level != 0x0A && current.level != 0x0D && current.level != 0x10 && current.level != 0x08 && current.level != 0x12) 
+    {
+        if (current.level == old.level + 1) return true;
+    }
     if (settings["Level"])
     {
         if (old.level == 0x01 && current.level == 0x02) return true;
