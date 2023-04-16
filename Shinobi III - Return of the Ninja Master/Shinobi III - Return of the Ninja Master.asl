@@ -25,6 +25,15 @@ state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
     byte sublvl:"mednafen.exe", 0x134F4ED;
     byte reset:"mednafen.exe", 0x1355D40;
 }
+state("Retroarch", "1.14.0 BlastEm")
+{
+byte start: "blastem_libretro.dll", 0x172B18, 0x198, 0xF500;
+byte screen: "blastem_libretro.dll", 0x172B18, 0x198, 0x32;
+byte input: "blastem_libretro.dll", 0x172B18, 0x198, 0xF4E1;
+byte stage: "blastem_libretro.dll", 0x172B18, 0x198, 0x37AD;
+byte sublvl: "blastem_libretro.dll", 0x172B18, 0x198, 0x37AC;
+byte reset: "blastem_libretro.dll", 0x172B18, 0x198, 0xA001;
+}
 init
 {
     if (modules.First().ModuleMemorySize == 90116096)
