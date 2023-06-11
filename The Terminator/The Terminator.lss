@@ -15,80 +15,11 @@
     <Variables />
   </Metadata>
   <Offset>00:00:00</Offset>
-  <AttemptCount>3</AttemptCount>
-  <AttemptHistory>
-    <Attempt id="1" started="02/01/2023 15:56:52" isStartedSynced="True" ended="02/01/2023 16:03:16" isEndedSynced="True" />
-    <Attempt id="2" started="02/01/2023 16:03:26" isStartedSynced="True" ended="02/01/2023 16:09:45" isEndedSynced="True" />
-  </AttemptHistory>
+  <AttemptCount>0</AttemptCount>
+  <AttemptHistory />
   <Segments>
     <Segment>
       <Name>Skynet, 2029</Name>
-      <Icon />
-      <SplitTimes>
-        <SplitTime name="Personal Best" />
-      </SplitTimes>
-      <BestSegmentTime>
-        <RealTime>00:01:52.8199680</RealTime>
-      </BestSegmentTime>
-      <SegmentHistory>
-        <Time id="1">
-          <RealTime>00:01:52.8199680</RealTime>
-        </Time>
-        <Time id="2">
-          <RealTime>00:02:02.4360030</RealTime>
-        </Time>
-      </SegmentHistory>
-    </Segment>
-    <Segment>
-      <Name>Los Angeles, 1984</Name>
-      <Icon />
-      <SplitTimes>
-        <SplitTime name="Personal Best" />
-      </SplitTimes>
-      <BestSegmentTime>
-        <RealTime>00:01:39.6716749</RealTime>
-      </BestSegmentTime>
-      <SegmentHistory>
-        <Time id="1">
-          <RealTime>00:01:39.6716749</RealTime>
-        </Time>
-        <Time id="2">
-          <RealTime>00:01:44.2083530</RealTime>
-        </Time>
-      </SegmentHistory>
-    </Segment>
-    <Segment>
-      <Name>Terminator</Name>
-      <Icon />
-      <SplitTimes>
-        <SplitTime name="Personal Best" />
-      </SplitTimes>
-      <BestSegmentTime />
-      <SegmentHistory>
-        <Time id="1" />
-        <Time id="2" />
-      </SegmentHistory>
-    </Segment>
-    <Segment>
-      <Name>Police Station</Name>
-      <Icon />
-      <SplitTimes>
-        <SplitTime name="Personal Best" />
-      </SplitTimes>
-      <BestSegmentTime>
-        <RealTime>00:02:04.9448480</RealTime>
-      </BestSegmentTime>
-      <SegmentHistory>
-        <Time id="1">
-          <RealTime>00:02:15.3823230</RealTime>
-        </Time>
-        <Time id="2">
-          <RealTime>00:02:04.9448480</RealTime>
-        </Time>
-      </SegmentHistory>
-    </Segment>
-    <Segment>
-      <Name>Cyberdyne Factory</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />
@@ -97,7 +28,43 @@
       <SegmentHistory />
     </Segment>
     <Segment>
-      <Name>I’ll be back</Name>
+      <Name>Los Angeles, 1984</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Los Angeles</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Terminator</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Police Station</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Cyberdyne Factory</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />
