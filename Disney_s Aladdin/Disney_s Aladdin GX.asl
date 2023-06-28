@@ -32,16 +32,16 @@ state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
 	byte demoTimer:		"mednafen.exe", 0x135AE7E; //F13E
 	byte demoTimer2:	"mednafen.exe", 0x135AE7F; //F13F
 }
-state("Retroarch", "1.14.0 GX") //"genesis_plus_gx_libretro.dll", 0x06A8C90, 0x01,
+state("Retroarch", "1.14.0 GX") //"genesis_plus_gx_libretro.dll", 0x06A8C90, 0x00
 {
-byte start: "genesis_plus_gx_libretro.dll", 0x06A8C90, 0x7265;
-byte start2: "genesis_plus_gx_libretro.dll", 0x06A8C90, 0x7264;
-byte sword: "genesis_plus_gx_libretro.dll", 0x06A8C90, 0x729D;
-byte stage: "genesis_plus_gx_libretro.dll", 0x06A8C90, 0x7E27;
-byte hp: "genesis_plus_gx_libretro.dll", 0x06A8C90, 0x7F07;
-byte end: "genesis_plus_gx_libretro.dll", 0x06A8C90, 0xEFA7;
-byte demoTimer: "genesis_plus_gx_libretro.dll", 0x06A8C90, 0xF13F;
-byte demoTimer2: "genesis_plus_gx_libretro.dll", 0x06A8C90, 0xF13E;
+byte start: "genesis_plus_gx_libretro.dll", 0x0070EF60, 0x7265;
+byte start2: "genesis_plus_gx_libretro.dll", 0x0070EF60, 0x7264;
+byte sword: "genesis_plus_gx_libretro.dll", 0x0070EF60, 0x729D;
+byte stage: "genesis_plus_gx_libretro.dll", 0x0070EF60, 0x7E27;
+byte hp: "genesis_plus_gx_libretro.dll", 0x0070EF60, 0x7F07;
+byte end: "genesis_plus_gx_libretro.dll", 0x0070EF60, 0xEFA7;
+byte demoTimer: "genesis_plus_gx_libretro.dll", 0x0070EF60, 0xF13F;
+byte demoTimer2: "genesis_plus_gx_libretro.dll", 0x0070EF60, 0xF13E;
 }
 init
 {
