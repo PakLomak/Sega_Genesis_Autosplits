@@ -5,45 +5,81 @@ state ("Fusion") //RAM 0x00 == "Fusion.exe", 0x2A52D4, 0x00;
     byte lvl:"Fusion.exe", 0x2A52D4, 0xFC43;
     byte done:"Fusion.exe", 0x2A52D4, 0xA20E;
     byte reset:"Fusion.exe", 0x2A52D4, 0xF007;
+    byte time:"Fusion.exe", 0x2A52D4, 0xFC3C;
 }
-state("mednafen", "1.27.1") //RAM 0x00 == 0x16EEB80
+state("Mednafen", "1.29.0")
 {
-    byte start:"mednafen.exe", 0x16FEB56;
-    byte idlvl:"mednafen.exe", 0x16FE7C5;
-    byte lvl:"mednafen.exe", 0x16FE7C3;
-    byte done:"mednafen.exe", 0x16F8D8E;
-    byte reset:"mednafen.exe", 0x16FDB87;
+byte start: "mednafen.exe", 0x1654B56;
+byte idlvl: "mednafen.exe", 0x16547C5;
+byte lvl: "mednafen.exe", 0x16547C3;
+byte done: "mednafen.exe", 0x164ED8E;
+byte reset: "mednafen.exe", 0x1653B87;
+byte time: "mednafen.exe", 0x16547BC;
 }
-state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
+state("Mednafen", "0.9.48")
 {
-    byte start:"mednafen.exe", 0x135BD16;
-    byte idlvl:"mednafen.exe", 0x135B985;
-    byte lvl:"mednafen.exe", 0x135B983;
-    byte done:"mednafen.exe", 0x1355F4E;
-    byte reset:"mednafen.exe", 0x135AD47;
+byte start: "mednafen.exe", 0x135BD16;
+byte idlvl: "mednafen.exe", 0x135B985;
+byte lvl: "mednafen.exe", 0x135B983;
+byte done: "mednafen.exe", 0x1355F4E;
+byte reset: "mednafen.exe", 0x135AD47;
+byte time: "mednafen.exe", 0x135B97C;
 }
-state("retroarch", "1.9.8") //RAM 0x00 == "blastem_libretro.dll", 0x173B18, 0x198, 0x00; Little endian!
+state("Retroarch", "1.16.0 BlastEm")
 {
-    byte start:"blastem_libretro.dll", 0x173B18, 0x198, 0xFFD7;
-    byte idlvl:"blastem_libretro.dll", 0x173B18, 0x198, 0xFC44;
-    byte lvl:"blastem_libretro.dll", 0x173B18, 0x198, 0xFC42;
-    byte done:"blastem_libretro.dll", 0x173B18, 0x198, 0xA20F;
-    byte reset:"blastem_libretro.dll", 0x173B18, 0x198, 0xF006;
+byte start: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFFD7;
+byte idlvl: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFC44;
+byte lvl: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFC42;
+byte done: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xA20F;
+byte reset: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xF006;
+byte time: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFC3D;
 }
+/*state("Retroarch", "1.16.0 GX")
+{
+byte start: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFFD7;
+byte idlvl: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFC44;
+byte lvl: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFC42;
+byte done: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xA20F;
+byte reset: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xF006;
+byte time: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFC3D;
+}*/
 init
 {
-    if (modules.First().ModuleMemorySize == 90116096)
-        version = "1.27.1";
+    if (modules.First().ModuleMemorySize == 91533312)  
+        version = "1.29.0";
     else if (modules.First().ModuleMemorySize == 93294592)
         version = "0.9.48";
+    vars.Start = false;
 }
 start
 {
-    return (old.start == 0x16 && current.start == 0xFF && current.idlvl == 0x00);
+    if (current.time == 0x99 && current.idlvl == 0x00) vars.Start = true;
+    if (old.start == 0x16 && current.start == 0xFF && vars.Start == true)
+    {
+        vars.Start = false;
+        return true;
+    }
 }
 split
 {
     if (current.lvl == old.lvl + 2) return true;
+    if (current.lvl == 0x00 || current.lvl == 0x02 || current.lvl == 0x04)
+    {
+        if (old.idlvl == 0x06 && current.idlvl == 0x08) return true;
+        if (old.idlvl == 0x0A && current.idlvl == 0x0C) return true;
+    }
+    if (current.lvl == 0x04 && old.idlvl == 0x0E && current.idlvl == 0x10) return true; // Alien House -> Zamza
+    if (current.lvl == 0x04 || current.lvl == 0x06 || current.lvl == 0x08 || current.lvl == 0x0A || current.lvl == 0x0E)
+    {
+        if (old.idlvl == 0x08 && current.idlvl == 0x0A) return true;
+        if (old.idlvl == 0x14 && current.idlvl == 0x16) return true;
+    }
+    if (current.lvl == 0x08 || current.lvl == 0x0C)
+    {
+        if (old.idlvl == 0x04 && current.idlvl == 0x06) return true;
+    }
+    if (current.lvl == 0x0C && old.idlvl == 0x10 && current.idlvl == 0x12) return true;
+    if (current.lvl == 0x0E && old.idlvl == 0x00 && current.idlvl == 0x02) return true;
     if (current.lvl == 0x0E && old.done == 0x00 && current.done == 0xE0) return true;
 }
 reset
