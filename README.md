@@ -7,6 +7,7 @@
 - Mednafen [0.9.48](https://forum.fobby.net/index.php?t=msg&goto=5224&#msg_5224 "Download") [1.27.1](https://mednafen.github.io/releases "Download")
 - Kega Fusion [3.64](https://segaretro.org/Kega_Fusion "Download")
 - Retroarch [BlastEm 0.6.3-pre](https://buildbot.libretro.com/stable/ "Download")
+- Для Retroarch необходимо скачать ядро и поместить его в папку cores в корне каталога
 ## Installation
 0. [Picture](https://github.com/PakLomak/Sega_Genesis_Autosplits/blob/main/How%20add%20asl.jpg)
 1. Скачайте .asl файл
