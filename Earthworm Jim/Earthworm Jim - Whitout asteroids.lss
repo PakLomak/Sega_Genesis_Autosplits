@@ -45,15 +45,6 @@
       <SegmentHistory />
     </Segment>
     <Segment>
-      <Name>Down the tubes?</Name>
-      <Icon />
-      <SplitTimes>
-        <SplitTime name="Personal Best" />
-      </SplitTimes>
-      <BestSegmentTime />
-      <SegmentHistory />
-    </Segment>
-    <Segment>
       <Name>Snot a problem! Round 1</Name>
       <Icon />
       <SplitTimes>

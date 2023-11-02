@@ -14,11 +14,9 @@
     <Variables />
   </Metadata>
   <Offset>00:00:00</Offset>
-  <AttemptCount>3</AttemptCount>
+  <AttemptCount>1</AttemptCount>
   <AttemptHistory>
-    <Attempt id="1" started="11/01/2023 09:17:05" isStartedSynced="True" ended="11/01/2023 09:17:10" isEndedSynced="True" />
-    <Attempt id="2" started="11/01/2023 09:17:43" isStartedSynced="True" ended="11/01/2023 09:18:57" isEndedSynced="True" />
-    <Attempt id="3" started="11/01/2023 09:19:01" isStartedSynced="True" ended="11/01/2023 09:23:14" isEndedSynced="True" />
+    <Attempt id="1" started="11/02/2023 11:50:28" isStartedSynced="True" ended="11/02/2023 11:53:46" isEndedSynced="True" />
   </AttemptHistory>
   <Segments>
     <Segment>
@@ -49,6 +47,15 @@
       <SegmentHistory />
     </Segment>
     <Segment>
+      <Name>WtH Evil Boss</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
       <Name>andy asteroids?</Name>
       <Icon />
       <SplitTimes>
@@ -67,7 +74,52 @@
       <SegmentHistory />
     </Segment>
     <Segment>
+      <Name>Short Bathysphere Race</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
       <Name>Down the tubes?</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Average  Bathysphere Race</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>tubes againe?</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>Long Bathysphere Race</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory />
+    </Segment>
+    <Segment>
+      <Name>TUBES</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best" />
