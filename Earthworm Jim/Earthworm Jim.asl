@@ -46,6 +46,7 @@ init
 }
 start
 {
+    print(vars.inBathysphere1.ToString());
     if (current.ChangeScreen == 0x88 && current.ChangeScreen2 == 0x62) vars.Start = true;
     if (current.ChangeScreen == 0x89 && current.ChangeScreen2 == 0x82 && current.Demo == 0x00 && current.Level == 0x00 && vars.Start == true)
     {
@@ -75,7 +76,7 @@ split
     if (old.Level == 0x11 && current.Level == 0x0E) return true; // andy asteroids? -> Down the tubes
     if (settings["BathysphereShort"])
     {
-        if (current.HpBathysphere >= 0x12) vars.DethBathysphere = true;
+        if (current.HpBathysphere >= 0x12 || current.BathysphereTime == 0x00) vars.DethBathysphere = true;
         if (current.BathysphereTime == 0x1E) vars.DethBathysphere = false;
         if (current.Level == 0x0E && current.BathysphereTime == 0x1E) vars.Bathysphere = true; // Первый заход в батисферу
         if (old.InOutBathysphere == 0x00 && current.InOutBathysphere == 0xFF && vars.Bathysphere == true && vars.inBathysphere1 == true)
@@ -86,7 +87,6 @@ split
         if (old.InOutBathysphere == 0xFF && current.InOutBathysphere == 0x00 && vars.Bathysphere == true && vars.DethBathysphere == false)
         {
             vars.Bathysphere = false;
-            vars.inBathysphere1 = false;
             return true;
         }
     }
