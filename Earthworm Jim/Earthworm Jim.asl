@@ -67,7 +67,15 @@ reset
 }
 split
 {
-    if (settings["asteroids"] && old.Level == 0x00 && current.Level == 0x10) return true; // New Junk City -> andy asteroids?
+    if (settings["asteroids"] && old.Level == 0x00 && current.Level == 0x10)
+    {
+        vars.Bathysphere = false;
+        vars.inBathysphere1 = true;
+        vars.inBathysphere2 = true;
+        vars.inBathysphere3 = true;
+        vars.DethBathysphere = false;
+        return true;
+    } // New Junk City -> andy asteroids?
     if (old.Level == 0x10 && current.Level == 0x01) return true; // andy asteroids? -> What the heck? (Hell or Heck?)
     if (settings["Snowman"] && old.Level == 0x01 && current.Level == 0x02) return true; // What the heck? -> What the heck? (Snowman Boss)
     if (settings["SnowmanDeth"] && old.Level == 0x02 && current.Level == 0x01) return true; // What the heck? (Snowman Boss) -> What the heck?
@@ -78,7 +86,7 @@ split
     {
         if (current.HpBathysphere >= 0x12 || current.BathysphereTime == 0x00) vars.DethBathysphere = true;
         if (current.BathysphereTime == 0x1E) vars.DethBathysphere = false;
-        if (current.Level == 0x0E && current.BathysphereTime == 0x1E) vars.Bathysphere = true; // Первый заход в батисферу
+        if (current.Level == 0x0E && current.BathysphereTime == 0x1E && vars.inBathysphere1 == true) vars.Bathysphere = true; // Первый заход в батисферу
         if (old.InOutBathysphere == 0x00 && current.InOutBathysphere == 0xFF && vars.Bathysphere == true && vars.inBathysphere1 == true)
         {
             vars.inBathysphere1 = false;
@@ -92,7 +100,7 @@ split
     }
     if (settings["BathysphereAverage"])
     {
-        if (current.Level == 0x0E && current.BathysphereTime == 0x1E && current.CheckPoint == 0xFF) vars.Bathysphere = true; // Второй заход в батисферу
+        if (current.Level == 0x0E && current.BathysphereTime == 0x1E && current.CheckPoint == 0xFF && vars.inBathysphere2 == true) vars.Bathysphere = true; // Второй заход в батисферу
         if (old.InOutBathysphere == 0x00 && current.InOutBathysphere == 0xFF && vars.Bathysphere == true && vars.inBathysphere2 == true && current.CheckPoint == 0xFF)
         {
             vars.inBathysphere2 = false;
@@ -106,7 +114,7 @@ split
     }
     if (settings["BathysphereLong"])
     {
-        if (current.Level == 0x0F && current.BathysphereTime == 0x1E) vars.Bathysphere = true; // Третий заход в батисферу
+        if (current.Level == 0x0F && current.BathysphereTime == 0x1E && vars.inBathysphere3 == true) vars.Bathysphere = true; // Третий заход в батисферу
         if (current.Level == 0x0F && old.InOutBathysphere == 0x00 && current.InOutBathysphere == 0xFF && vars.Bathysphere == true && vars.inBathysphere3 == true)
         {
             vars.inBathysphere3 = false;
