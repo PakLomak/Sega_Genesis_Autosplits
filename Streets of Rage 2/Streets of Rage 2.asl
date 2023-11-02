@@ -63,6 +63,8 @@ start
 split
 {
     if (current.lvl == old.lvl + 2) return true;
+    if (settings["Rooms"])
+    {
     if (current.lvl == 0x00 || current.lvl == 0x02 || current.lvl == 0x04)
     {
         if (old.idlvl == 0x06 && current.idlvl == 0x08) return true;
@@ -80,6 +82,7 @@ split
     }
     if (current.lvl == 0x0C && old.idlvl == 0x10 && current.idlvl == 0x12) return true;
     if (current.lvl == 0x0E && old.idlvl == 0x00 && current.idlvl == 0x02) return true;
+    }
     if (current.lvl == 0x0E && old.done == 0x00 && current.done == 0xE0) return true;
 }
 reset
@@ -91,4 +94,6 @@ startup
 	refreshRate = 70;
 	settings.Add("main", false, "AutoSplitter for Streets of Rage 2 by PakLomak");
 	settings.Add("main3", false, "--https://www.twitch.tv/paklomak", "main");
+    settings.Add("options", true, "Options");
+	settings.Add("Rooms", true, "Split by Division of locations", "options");
 }
