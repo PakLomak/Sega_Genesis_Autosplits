@@ -4,7 +4,7 @@
 - [FAQ-Mednafen](https://github.com/PakLomak/FAQ-Mednafen "Link on github")
 - [Download on Google](https://drive.google.com/drive/folders/1ix3xfBxoVDZEmxUtok1llSrFGDg78VK_?usp=sharing "Link on Google")
 ## Supported emulators
-- Mednafen [0.9.48](https://forum.fobby.net/index.php?t=msg&goto=5224&#msg_5224 "Download") [1.27.1](https://mednafen.github.io/releases "Download")
+- Mednafen [0.9.48](https://forum.fobby.net/index.php?t=msg&goto=5224&#msg_5224 "Download") [1.29.0]([https://mednafen.github.io/releases](https://forum.fobby.net/index.php?t=rview&goto=6619&th=2057#msg_6619) "Download")
 - Kega Fusion [3.64](https://segaretro.org/Kega_Fusion "Download")
 - Retroarch [BlastEm 0.6.3-pre](https://buildbot.libretro.com/stable/ "Download")
 - Для Retroarch необходимо скачать ядро и поместить его в папку cores в корне каталога
