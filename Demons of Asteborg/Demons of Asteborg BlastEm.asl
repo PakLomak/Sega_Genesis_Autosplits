@@ -1,11 +1,11 @@
-state("retroarch", "BlastEm") //RAM 0x00 == "blastem_libretro.dll", 0x172B18, 0x198, 0x00; Little endian!
+state("Retroarch", "1.16.0 BlastEm")
 {
-    byte start:"blastem_libretro.dll", 0x172B18, 0x198, 0x6D7D; //6D7C
-    byte screen:"blastem_libretro.dll", 0x172B18, 0x198, 0x7150; //7151
-    byte screen2:"blastem_libretro.dll", 0x172B18, 0x198, 0x7151; //7150
-    byte lastboss:"blastem_libretro.dll", 0x172B18, 0x198, 0xBE0E; //BE0F
-    byte dead:"blastem_libretro.dll", 0x172B18, 0x198, 0x6D19; //6D18
-    byte reset:"blastem_libretro.dll", 0x172B18, 0x198, 0x00; //00
+byte start: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x6D7D;
+byte screen: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x7150;
+byte screen2: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x7151;
+byte lastboss: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xBE0E;
+byte dead: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x6D19;
+byte reset: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x0;
 }
 start
 {

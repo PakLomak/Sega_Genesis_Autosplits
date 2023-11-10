@@ -25,14 +25,14 @@ byte bosshp: "mednafen.exe", 0x164EEEF;
 byte bubbles: "mednafen.exe", 0x165289D;
 byte screen: "mednafen.exe", 0x1654B7F;
 }
-state("Retroarch", "1.14.0 GX")
+state("Retroarch", "1.16.0 BlastEm")
 {
-byte level: "genesis_plus_gx_libretro.dll", 0x06A8990, 0xDD20;
-byte start: "genesis_plus_gx_libretro.dll", 0x06A8990, 0xFFF4;
-byte input: "genesis_plus_gx_libretro.dll", 0x06A8990, 0xDD3D;
-byte bosshp: "genesis_plus_gx_libretro.dll", 0x06A8990, 0xA36E;
-byte bubbles: "genesis_plus_gx_libretro.dll", 0x06A8990, 0xDD1C;
-byte screen: "genesis_plus_gx_libretro.dll", 0x06A8990, 0xFFFE;
+byte level: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xDD20;
+byte start: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFFF4;
+byte input: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xDD3D;
+byte bosshp: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xA36E;
+byte bubbles: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xDD1C;
+byte screen: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFFFE;
 }
 state("emuhawk", "1.13.2")
 {
@@ -45,10 +45,26 @@ byte screen: "libgenplusgx.dll", 0x000062D8, 0xFFFE;
 }
 init
 {
-    if (modules.First().ModuleMemorySize == 91533312)  
+int memSize = modules.First().ModuleMemorySize;
+switch (memSize)
+{
+    case 91533312:
+        print("Detected Mednafen 1.29.0");
         version = "1.29.0";
-    else if (modules.First().ModuleMemorySize == 93294592)
+        break;
+    case 93294592:
+        print("Detected Mednafen 0.9.48");
         version = "0.9.48";
+        break;
+    case 4104192:
+        print("Detected Kega Fusion 3.64");
+        version = "3.64";
+        break;
+    default:
+		print("Unknown Emulator");
+		version = "";
+		break;
+}
 }
 start
 {

@@ -1,54 +1,70 @@
-state ("Fusion") //RAM 0x00 == "Fusion.exe", 0x2A52D4, 0x00;
+state("Fusion", "3.64")
 {
-    byte start:"Fusion.exe", 0x2A52D4, 0xC0;
-    byte start2:"Fusion.exe", 0x2A52D4, 0xA0;
-    byte stage:"Fusion.exe", 0x2A52D4, 0x8C;
-    byte demo:"Fusion.exe", 0x2A52D4, 0xFE96;
-    byte screen:"Fusion.exe", 0x2A52D4, 0x53;
-    byte blue:"Fusion.exe", 0x2A52D4, 0x52;
+byte start: "Fusion.exe", 0x2A52D4, 0xC0;
+byte start2: "Fusion.exe", 0x2A52D4, 0xA0;
+byte stage: "Fusion.exe", 0x2A52D4, 0x8C;
+byte demo: "Fusion.exe", 0x2A52D4, 0xFE96;
+byte screen: "Fusion.exe", 0x2A52D4, 0x53;
+byte blue: "Fusion.exe", 0x2A52D4, 0x52;
 }
-state("mednafen", "1.27.1") //RAM 0x00 == 0x16EEB80
+state("Mednafen", "0.9.48")
 {
-    byte start:"mednafen.exe", 0x16EEC40;
-    byte start2:"mednafen.exe", 0x16EEC20;
-    byte stage:"mednafen.exe", 0x16EEC0C;
-    byte demo:"mednafen.exe", 0x16FEA16;
-    byte screen:"mednafen.exe", 0x16EEBD3;
-    byte blue:"mednafen.exe", 0x16EEBD2;
+byte start: "mednafen.exe", 0x134BE00;
+byte start2: "mednafen.exe", 0x134BDE0;
+byte stage: "mednafen.exe", 0x134BDCC;
+byte demo: "mednafen.exe", 0x135BBD6;
+byte screen: "mednafen.exe", 0x134BD93;
+byte blue: "mednafen.exe", 0x134BD92;
 }
-state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
+state("Mednafen", "1.29.0")
 {
-    byte start:"mednafen.exe", 0x134BE00;
-    byte start2:"mednafen.exe", 0x134BDE0;
-    byte stage:"mednafen.exe", 0x134BDCC;
-    byte demo:"mednafen.exe", 0x135BBD6;
-    byte screen:"mednafen.exe", 0x134BD93;
-    byte blue:"mednafen.exe", 0x134BD92;
+byte start: "mednafen.exe", 0x1644C40;
+byte start2: "mednafen.exe", 0x1644C20;
+byte stage: "mednafen.exe", 0x1644C0C;
+byte demo: "mednafen.exe", 0x1654A16;
+byte screen: "mednafen.exe", 0x1644BD3;
+byte blue: "mednafen.exe", 0x1644BD2;
 }
-state("retroarch", "1.9.8") //RAM 0x00 == "blastem_libretro.dll", 0x173B18, 0x198, 0x00;
+state("Retroarch", "1.16.0 BlastEm")
 {
-    byte start:"blastem_libretro.dll", 0x173B18, 0x198, 0xC1;
-    byte start2:"blastem_libretro.dll", 0x173B18, 0x198, 0xA1;
-    byte stage:"blastem_libretro.dll", 0x173B18, 0x198, 0x8D;
-    byte demo:"blastem_libretro.dll", 0x173B18, 0x198, 0xFE97;
-    byte screen:"blastem_libretro.dll", 0x173B18, 0x198, 0x52;
-    byte blue:"blastem_libretro.dll", 0x173B18, 0x198, 0x53;
+byte start: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xC1;
+byte start2: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xA1;
+byte stage: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x8D;
+byte demo: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFE97;
+byte screen: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x52;
+byte blue: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x53;
 }
-state("emuhawk", "1.13.2") //RAM 0x00 == "libgenplusgx.dll", 0x000062D8, 0x00; Little endian!
+state("emuhawk", "1.13.2")
 {
-    byte start:"libgenplusgx.dll", 0x000062D8, 0xC1;
-    byte start2:"libgenplusgx.dll", 0x000062D8, 0xA1;
-    byte stage:"libgenplusgx.dll", 0x000062D8, 0x8D;
-    byte demo:"libgenplusgx.dll", 0x000062D8, 0xFE97;
-    byte screen:"libgenplusgx.dll", 0x000062D8, 0x52;
-    byte blue:"libgenplusgx.dll", 0x000062D8, 0x53;
+byte start: "libgenplusgx.dll", 0x000062D8, 0xC1;
+byte start2: "libgenplusgx.dll", 0x000062D8, 0xA1;
+byte stage: "libgenplusgx.dll", 0x000062D8, 0x8D;
+byte demo: "libgenplusgx.dll", 0x000062D8, 0xFE97;
+byte screen: "libgenplusgx.dll", 0x000062D8, 0x52;
+byte blue: "libgenplusgx.dll", 0x000062D8, 0x53;
 }
 init
 {
-    if (modules.First().ModuleMemorySize == 90116096)
-        version = "1.27.1";
-    else if (modules.First().ModuleMemorySize == 93294592)
+int memSize = modules.First().ModuleMemorySize;
+switch (memSize)
+{
+    case 91533312:
+        print("Detected Mednafen 1.29.0");
+        version = "1.29.0";
+        break;
+    case 93294592:
+        print("Detected Mednafen 0.9.48");
         version = "0.9.48";
+        break;
+    case 4104192:
+        print("Detected Kega Fusion 3.64");
+        version = "3.64";
+        break;
+    default:
+		print("Unknown Emulator");
+		version = "";
+		break;
+}
 }
 start
 {

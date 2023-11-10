@@ -1,54 +1,80 @@
-state ("Fusion") //RAM 0x00 == "Fusion.exe", 0x2A52D4, 0x00;
+state("Fusion", "3.64")
 {
-	byte start: 		"Fusion.exe", 0x2A52D4, 0x07264;
-	byte start2:		"Fusion.exe", 0x2A52D4, 0x07265;
-	byte sword:			"Fusion.exe", 0x2A52D4, 0x0729C;
-	byte stage: 		"Fusion.exe", 0x2A52D4, 0x07E26;
-	byte hp:			"Fusion.exe", 0x2A52D4, 0x07F06;
-	byte end:			"Fusion.exe", 0x2A52D4, 0x0EFA6;
-	byte demoTimer:		"Fusion.exe", 0x2A52D4, 0x0F13E;
-	byte demoTimer2:	"Fusion.exe", 0x2A52D4, 0x0F13F;
+byte start: "Fusion.exe", 0x2A52D4, 0x7264;
+byte start2: "Fusion.exe", 0x2A52D4, 0x7265;
+byte sword: "Fusion.exe", 0x2A52D4, 0x729C;
+byte stage: "Fusion.exe", 0x2A52D4, 0x7E26;
+byte hp: "Fusion.exe", 0x2A52D4, 0x7F06;
+byte end: "Fusion.exe", 0x2A52D4, 0xEFA6;
+byte demoTimer: "Fusion.exe", 0x2A52D4, 0xF13E;
+byte demoTimer2: "Fusion.exe", 0x2A52D4, 0xF13F;
 }
-state("mednafen", "1.27.1") //RAM 0x00 == 0x16EEB80
+state("Mednafen", "0.9.48")
 {
-	byte start: 		"mednafen.exe", 0x16F5DE4; //7264
-	byte start2:		"mednafen.exe", 0x16F5DE5; //7265
-	byte sword:			"mednafen.exe", 0x16F5E1C; //729C
-	byte stage:			"mednafen.exe", 0x16F69A6; //7E26
-	byte hp:			"mednafen.exe", 0x16F6A86; //7F06
-	byte end:			"mednafen.exe", 0x16FDB26; //EFA6
-	byte demoTimer:		"mednafen.exe", 0x16FDCBE; //F13E
-	byte demoTimer2:	"mednafen.exe", 0x16FDCBF; //F13F
-	
+byte start: "mednafen.exe", 0x1352FA4;
+byte start2: "mednafen.exe", 0x1352FA5;
+byte sword: "mednafen.exe", 0x1352FDC;
+byte stage: "mednafen.exe", 0x1353B66;
+byte hp: "mednafen.exe", 0x1353C46;
+byte end: "mednafen.exe", 0x135ACE6;
+byte demoTimer: "mednafen.exe", 0x135AE7E;
+byte demoTimer2: "mednafen.exe", 0x135AE7F;
 }
-state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
+state("Mednafen", "1.29.0")
 {
-	byte start: 		"mednafen.exe", 0x1352FA4; //7264
-	byte start2:		"mednafen.exe", 0x1352FA5; //7265
-	byte sword:			"mednafen.exe", 0x1352FDC; //729C
-	byte stage:			"mednafen.exe", 0x1353B66; //7E26
-	byte hp:			"mednafen.exe", 0x1353C46; //7F06
-	byte end:			"mednafen.exe", 0x135ACE6; //EFA6
-	byte demoTimer:		"mednafen.exe", 0x135AE7E; //F13E
-	byte demoTimer2:	"mednafen.exe", 0x135AE7F; //F13F
+byte start: "mednafen.exe", 0x164BDE4;
+byte start2: "mednafen.exe", 0x164BDE5;
+byte sword: "mednafen.exe", 0x164BE1C;
+byte stage: "mednafen.exe", 0x164C9A6;
+byte hp: "mednafen.exe", 0x164CA86;
+byte end: "mednafen.exe", 0x1653B26;
+byte demoTimer: "mednafen.exe", 0x1653CBE;
+byte demoTimer2: "mednafen.exe", 0x1653CBF;
 }
-state("Retroarch", "1.14.0 BlastEm")
+state("Retroarch", "1.16.0 BlastEm")
 {
-byte start: "blastem_libretro.dll", 0x172B18, 0x198, 0x7265;
-byte start2: "blastem_libretro.dll", 0x172B18, 0x198, 0x7264;
-byte sword: "blastem_libretro.dll", 0x172B18, 0x198, 0x729D;
-byte stage: "blastem_libretro.dll", 0x172B18, 0x198, 0x7E27;
-byte hp: "blastem_libretro.dll", 0x172B18, 0x198, 0x7F07;
-byte end: "blastem_libretro.dll", 0x172B18, 0x198, 0xEFA7;
-byte demoTimer: "blastem_libretro.dll", 0x172B18, 0x198, 0xF13F;
-byte demoTimer2: "blastem_libretro.dll", 0x172B18, 0x198, 0xF13E;
+byte start: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x7265;
+byte start2: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x7264;
+byte sword: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x729D;
+byte stage: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x7E27;
+byte hp: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x7F07;
+byte end: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xEFA7;
+byte demoTimer: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xF13F;
+byte demoTimer2: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xF13E;
+}
+state("emuhawk", "1.13.2")
+{
+byte start: "libgenplusgx.dll", 0x000062D8, 0x7265;
+byte start2: "libgenplusgx.dll", 0x000062D8, 0x7264;
+byte sword: "libgenplusgx.dll", 0x000062D8, 0x729D;
+byte stage: "libgenplusgx.dll", 0x000062D8, 0x7E27;
+byte hp: "libgenplusgx.dll", 0x000062D8, 0x7F07;
+byte end: "libgenplusgx.dll", 0x000062D8, 0xEFA7;
+byte demoTimer: "libgenplusgx.dll", 0x000062D8, 0xF13F;
+byte demoTimer2: "libgenplusgx.dll", 0x000062D8, 0xF13E;
 }
 init
 {
-    if (modules.First().ModuleMemorySize == 90116096)
-        version = "1.27.1";
-    else if (modules.First().ModuleMemorySize == 93294592)
+int memSize = modules.First().ModuleMemorySize;
+switch (memSize)
+{
+    case 91533312:
+        print("Detected Mednafen 1.29.0");
+        version = "1.29.0";
+        break;
+    case 93294592:
+        print("Detected Mednafen 0.9.48");
         version = "0.9.48";
+        break;
+    case 4104192:
+        print("Detected Kega Fusion 3.64");
+        version = "3.64";
+        break;
+    default:
+		print("Unknown Emulator");
+		version = "";
+		break;
+}
 }
 start
 {

@@ -1,45 +1,70 @@
-state ("Fusion") //RAM 0x00 == "Fusion.exe", 0x2A52D4, 0x00;
+state("Fusion", "3.64")
 {
-    byte start:"Fusion.exe", 0x2A52D4, 0xF501;
-    byte screen:"Fusion.exe", 0x2A52D4, 0x033;
-    byte input:"Fusion.exe", 0x2A52D4, 0xF4E0;
-    byte stage:"Fusion.exe", 0x2A52D4, 0x37AC;
-    byte sublvl:"Fusion.exe", 0x2A52D4, 0x37AD;
-    byte reset:"Fusion.exe", 0x2A52D4, 0xA000;
+byte start: "Fusion.exe", 0x2A52D4, 0xF501;
+byte screen: "Fusion.exe", 0x2A52D4, 0x33;
+byte input: "Fusion.exe", 0x2A52D4, 0xF4E0;
+byte stage: "Fusion.exe", 0x2A52D4, 0x37AC;
+byte sublvl: "Fusion.exe", 0x2A52D4, 0x37AD;
+byte reset: "Fusion.exe", 0x2A52D4, 0xA000;
 }
-state("mednafen", "1.27.1") //RAM 0x00 == 0x16EEB80
+state("Mednafen", "0.9.48")
 {
-    byte start:"mednafen.exe", 0x16FE081;
-    byte screen:"mednafen.exe", 0x16EEBB3;
-    byte input:"mednafen.exe", 0x16FE060;
-    byte stage:"mednafen.exe", 0x16F232C;
-    byte sublvl:"mednafen.exe", 0x16F232D;
-    byte reset:"mednafen.exe", 0x16F8B80;
+byte start: "mednafen.exe", 0x135B241;
+byte screen: "mednafen.exe", 0x134BD73;
+byte input: "mednafen.exe", 0x135B220;
+byte stage: "mednafen.exe", 0x134F4EC;
+byte sublvl: "mednafen.exe", 0x134F4ED;
+byte reset: "mednafen.exe", 0x1355D40;
 }
-state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
+state("Mednafen", "1.29.0")
 {
-    byte start:"mednafen.exe", 0x135B241;
-    byte screen:"mednafen.exe", 0x134BD73;
-    byte input:"mednafen.exe", 0x135B220;
-    byte stage:"mednafen.exe", 0x134F4EC;
-    byte sublvl:"mednafen.exe", 0x134F4ED;
-    byte reset:"mednafen.exe", 0x1355D40;
+byte start: "mednafen.exe", 0x1654081;
+byte screen: "mednafen.exe", 0x1644BB3;
+byte input: "mednafen.exe", 0x1654060;
+byte stage: "mednafen.exe", 0x164832C;
+byte sublvl: "mednafen.exe", 0x164832D;
+byte reset: "mednafen.exe", 0x164EB80;
 }
-state("Retroarch", "1.14.0 BlastEm")
+state("Retroarch", "1.16.0 BlastEm")
 {
-byte start: "blastem_libretro.dll", 0x172B18, 0x198, 0xF500;
-byte screen: "blastem_libretro.dll", 0x172B18, 0x198, 0x32;
-byte input: "blastem_libretro.dll", 0x172B18, 0x198, 0xF4E1;
-byte stage: "blastem_libretro.dll", 0x172B18, 0x198, 0x37AD;
-byte sublvl: "blastem_libretro.dll", 0x172B18, 0x198, 0x37AC;
-byte reset: "blastem_libretro.dll", 0x172B18, 0x198, 0xA001;
+byte start: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xF500;
+byte screen: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x32;
+byte input: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xF4E1;
+byte stage: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x37AD;
+byte sublvl: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x37AC;
+byte reset: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xA001;
+}
+state("emuhawk", "1.13.2")
+{
+byte start: "libgenplusgx.dll", 0x000062D8, 0xF500;
+byte screen: "libgenplusgx.dll", 0x000062D8, 0x32;
+byte input: "libgenplusgx.dll", 0x000062D8, 0xF4E1;
+byte stage: "libgenplusgx.dll", 0x000062D8, 0x37AD;
+byte sublvl: "libgenplusgx.dll", 0x000062D8, 0x37AC;
+byte reset: "libgenplusgx.dll", 0x000062D8, 0xA001;
 }
 init
 {
-    if (modules.First().ModuleMemorySize == 90116096)
-        version = "1.27.1";
-    else if (modules.First().ModuleMemorySize == 93294592)
+int memSize = modules.First().ModuleMemorySize;
+switch (memSize)
+{
+    case 91533312:
+        print("Detected Mednafen 1.29.0");
+        version = "1.29.0";
+        break;
+    case 93294592:
+        print("Detected Mednafen 0.9.48");
         version = "0.9.48";
+        break;
+    case 4104192:
+        print("Detected Kega Fusion 3.64");
+        version = "3.64";
+        break;
+    default:
+		print("Unknown Emulator");
+		version = "";
+		break;
+}
 }
 start
 {

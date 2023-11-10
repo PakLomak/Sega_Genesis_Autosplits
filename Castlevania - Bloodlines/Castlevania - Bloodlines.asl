@@ -1,27 +1,55 @@
-state ("Fusion") //RAM 0x00 == "Fusion.exe", 0x2A52D4, 0x00;
+state("Fusion", "3.64")
 {
-	byte move: 			"Fusion.exe", 0x2A52D4, 0x090D1;
-	byte stage:			"Fusion.exe", 0x2A52D4, 0x0FB2B;
-	byte orb:			"Fusion.exe", 0x2A52D4, 0x0BCD3;
+byte move: "Fusion.exe", 0x2A52D4, 0x90D1;
+byte stage: "Fusion.exe", 0x2A52D4, 0xFB2B;
+byte orb: "Fusion.exe", 0x2A52D4, 0xBCD3;
 }
-state("mednafen", "1.27.1") //RAM 0x00 == 0x16EEB80
+state("Mednafen", "0.9.48")
 {
-	byte move: 			"mednafen.exe", 0x16F7C51; //90D1
-	byte stage:			"mednafen.exe", 0x16FE6AB; //FB2B
-	byte orb:			"mednafen.exe", 0x16FA853; //BCD3
+byte move: "mednafen.exe", 0x1354E11;
+byte stage: "mednafen.exe", 0x135B86B;
+byte orb: "mednafen.exe", 0x1357A13;
 }
-state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
+state("Mednafen", "1.29.0")
 {
-	byte move: 			"mednafen.exe", 0x1354E11; //90D1
-	byte stage:			"mednafen.exe", 0x135B86B; //FB2B
-	byte orb:			"mednafen.exe", 0x1357A13; //BCD3
+byte move: "mednafen.exe", 0x164DC51;
+byte stage: "mednafen.exe", 0x16546AB;
+byte orb: "mednafen.exe", 0x1650853;
+}
+state("Retroarch", "1.16.0 BlastEm")
+{
+byte move: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x90D0;
+byte stage: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFB2A;
+byte orb: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xBCD2;
+}
+state("emuhawk", "1.13.2")
+{
+byte move: "libgenplusgx.dll", 0x000062D8, 0x90D0;
+byte stage: "libgenplusgx.dll", 0x000062D8, 0xFB2A;
+byte orb: "libgenplusgx.dll", 0x000062D8, 0xBCD2;
 }
 init
 {
-    if (modules.First().ModuleMemorySize == 90116096)
-        version = "1.27.1";
-    else if (modules.First().ModuleMemorySize == 93294592)
+int memSize = modules.First().ModuleMemorySize;
+switch (memSize)
+{
+    case 91533312:
+        print("Detected Mednafen 1.29.0");
+        version = "1.29.0";
+        break;
+    case 93294592:
+        print("Detected Mednafen 0.9.48");
         version = "0.9.48";
+        break;
+    case 4104192:
+        print("Detected Kega Fusion 3.64");
+        version = "3.64";
+        break;
+    default:
+		print("Unknown Emulator");
+		version = "";
+		break;
+}
 }
 start
 {

@@ -1,12 +1,13 @@
-state("retroarch", "BlastEm") //RAM 0x00 == "blastem_libretro.dll", 0x172B18, 0x198, 0x00; Little endian!
+state("Retroarch", "1.16.0 GX")
 {
-    byte start:"genesis_plus_gx_libretro.dll", 0x02851A60, 0x6D7D; //6D7C
-    byte screen:"genesis_plus_gx_libretro.dll", 0x02851A60, 0x7150; //7151
-    byte screen2:"genesis_plus_gx_libretro.dll", 0x02851A60, 0x7151; //7150
-    byte lastboss:"genesis_plus_gx_libretro.dll", 0x02851A60, 0xBE0E; //BE0F
-    byte dead:"genesis_plus_gx_libretro.dll", 0x02851A60, 0x6D19; //6D18
-    byte reset:"genesis_plus_gx_libretro.dll", 0x02851A60, 0x00; //00
+byte start: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x6D7D;
+byte screen: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x7150;
+byte screen2: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x7151;
+byte lastboss: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xBE0E;
+byte dead: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x6D19;
+byte reset: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x0;
 }
+
 start
 {
     return (old.start == 0x0C && current.start == 0x0D);

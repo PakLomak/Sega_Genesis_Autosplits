@@ -1,14 +1,26 @@
-state ("Fusion")
+state("Fusion", "3.64")
 {
-byte ChangeScreen:"Fusion.exe", 0x2A52D4, 0x9928;
-byte ChangeScreen2:"Fusion.exe", 0x2A52D4, 0x9929;
-byte Demo:"Fusion.exe", 0x2A52D4, 0xFF98;
-byte Level:"Fusion.exe", 0x2A52D4, 0xA692;
-byte FinalBossDeath:"Fusion.exe", 0x2A52D4, 0xFD58;
-byte BathysphereTime:"Fusion.exe", 0x2A52D4, 0xFCA1;
-byte InOutBathysphere:"Fusion.exe", 0x2A52D4, 0xFD4F;
-byte CheckPoint:"Fusion.exe", 0x2A52D4, 0xFDE0;
-byte HpBathysphere:"Fusion.exe", 0x2A52D4, 0xAFDE;
+byte ChangeScreen: "Fusion.exe", 0x2A52D4, 0x9928;
+byte ChangeScreen2: "Fusion.exe", 0x2A52D4, 0x9929;
+byte Demo: "Fusion.exe", 0x2A52D4, 0xFF98;
+byte Level: "Fusion.exe", 0x2A52D4, 0xA692;
+byte FinalBossDeath: "Fusion.exe", 0x2A52D4, 0xFD58;
+byte BathysphereTime: "Fusion.exe", 0x2A52D4, 0xFCA1;
+byte InOutBathysphere: "Fusion.exe", 0x2A52D4, 0xFD4F;
+byte CheckPoint: "Fusion.exe", 0x2A52D4, 0xFDE0;
+byte HpBathysphere: "Fusion.exe", 0x2A52D4, 0xAFDE;
+}
+state("Mednafen", "0.9.48")
+{
+byte ChangeScreen: "mednafen.exe", 0x1355668;
+byte ChangeScreen2: "mednafen.exe", 0x1355669;
+byte Demo: "mednafen.exe", 0x135BCD8;
+byte Level: "mednafen.exe", 0x13563D2;
+byte FinalBossDeath: "mednafen.exe", 0x135BA98;
+byte BathysphereTime: "mednafen.exe", 0x135B9E1;
+byte InOutBathysphere: "mednafen.exe", 0x135BA8F;
+byte CheckPoint: "mednafen.exe", 0x135BB20;
+byte HpBathysphere: "mednafen.exe", 0x1356D1E;
 }
 state("Mednafen", "1.29.0")
 {
@@ -34,8 +46,41 @@ byte InOutBathysphere: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFD4E;
 byte CheckPoint: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFDE1;
 byte HpBathysphere: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xAFDF;
 }
+state("emuhawk", "1.13.2")
+{
+byte ChangeScreen: "libgenplusgx.dll", 0x000062D8, 0x9929;
+byte ChangeScreen2: "libgenplusgx.dll", 0x000062D8, 0x9928;
+byte Demo: "libgenplusgx.dll", 0x000062D8, 0xFF99;
+byte Level: "libgenplusgx.dll", 0x000062D8, 0xA693;
+byte FinalBossDeath: "libgenplusgx.dll", 0x000062D8, 0xFD59;
+byte BathysphereTime: "libgenplusgx.dll", 0x000062D8, 0xFCA0;
+byte InOutBathysphere: "libgenplusgx.dll", 0x000062D8, 0xFD4E;
+byte CheckPoint: "libgenplusgx.dll", 0x000062D8, 0xFDE1;
+byte HpBathysphere: "libgenplusgx.dll", 0x000062D8, 0xAFDF;
+}
+
 init
 {
+int memSize = modules.First().ModuleMemorySize;
+switch (memSize)
+{
+    case 91533312:
+        print("Detected Mednafen 1.29.0");
+        version = "1.29.0";
+        break;
+    case 93294592:
+        print("Detected Mednafen 0.9.48");
+        version = "0.9.48";
+        break;
+    case 4104192:
+        print("Detected Kega Fusion 3.64");
+        version = "3.64";
+        break;
+    default:
+		print("Unknown Emulator");
+		version = "";
+		break;
+}
     vars.Start = false;
     vars.worms = false;
     vars.Bathysphere = false;

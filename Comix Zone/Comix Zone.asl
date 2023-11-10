@@ -1,115 +1,130 @@
-state ("Fusion")
+state("Fusion", "3.64")
 {
-	byte timeUpper: 		"Fusion.exe", 0x2A52D4, 0x0c03e;
-	byte time: 				"Fusion.exe", 0x2A52D4, 0x0c03f;
-	byte demo: 				"Fusion.exe", 0x2A52D4, 0x0c190;
-	byte panelID: 			"Fusion.exe", 0x2A52D4, 0x0bf38;
-	byte page: 				"Fusion.exe", 0x2A52D4, 0x0bf39;
-	byte stage: 			"Fusion.exe", 0x2A52D4, 0x0bf1f;
-	//byte page_scroll: 	"Fusion.exe", 0x2A52D4, 0x000a8;
-	byte page_sheet:        "Fusion.exe", 0x2A52D4, 0x0bec2;
-    byte page_sheet2:       "Fusion.exe", 0x2A52D4, 0x0bec3;
-    ushort waterTimer: 		"Fusion.exe", 0x2A52D4, 0x05e08;
-	byte switcher: 			"Fusion.exe", 0x2A52D4, 0x0606c;
-	byte ending: 			"Fusion.exe", 0x2A52D4, 0x0bfd6;
-    byte animation:         "Fusion.exe", 0x2A52D4, 0x05747;
-    byte yPos:              "Fusion.exe", 0x2A52D4, 0x05744;
-    byte yPos2:             "Fusion.exe", 0x2A52D4, 0x05745;
-    byte waterPos:          "Fusion.exe", 0x2A52D4, 0x05de3;
-    byte dead:              "Fusion.exe", 0x2A52D4, 0x0BF04;
+byte timeUpper: "Fusion.exe", 0x2A52D4, 0xC03E;
+byte time: "Fusion.exe", 0x2A52D4, 0xC03F;
+byte demo: "Fusion.exe", 0x2A52D4, 0xC190;
+byte panelID: "Fusion.exe", 0x2A52D4, 0xBF38;
+byte page: "Fusion.exe", 0x2A52D4, 0xBF39;
+byte stage: "Fusion.exe", 0x2A52D4, 0xBF1F;
+//byte page_scroll: "Fusion.exe", 0x2A52D4, 0xA8;
+byte page_sheet: "Fusion.exe", 0x2A52D4, 0xBEC2;
+byte page_sheet2: "Fusion.exe", 0x2A52D4, 0xBEC3;
+ushort waterTimer: "Fusion.exe", 0x2A52D4, 0x5E08;
+byte switcher: "Fusion.exe", 0x2A52D4, 0x606C;
+byte ending: "Fusion.exe", 0x2A52D4, 0xBFD6;
+byte animation: "Fusion.exe", 0x2A52D4, 0x5747;
+byte yPos: "Fusion.exe", 0x2A52D4, 0x5744;
+byte yPos2: "Fusion.exe", 0x2A52D4, 0x5745;
+byte waterPos: "Fusion.exe", 0x2A52D4, 0x5DE3;
+byte dead: "Fusion.exe", 0x2A52D4, 0xBF04;
 }
-state("mednafen", "1.26.1") //RAM 0x00 == 0x17D3F80
+state("Mednafen", "0.9.48")
 {
-    byte timeUpper : "mednafen.exe", 0x17DFFBE;
-    byte time : "mednafen.exe", 0x17DFFBF;
-    byte demo : "mednafen.exe", 0x17E0110;
-    byte panelID : "mednafen.exe", 0x17DFEB9;
-    byte page : "mednafen.exe", 0x17DFEB8;
-    byte stage : "mednafen.exe", 0x17DFE9F;
-    //byte page_scroll : "mednafen.exe", 0x17D4028;
-    byte page_sheet:"mednafen.exe", 0x17DFE42;
-    byte page_sheet2:"mednafen.exe", 0x17DFE43;
-    ushort waterTimer : "mednafen.exe", 0x17D9D88;
-    byte switcher : "mednafen.exe", 0x17D9FEC;
-    byte ending : "mednafen.exe", 0x17DFF57;
-    byte animation : "mednafen.exe", 0x17D96C7;
-    byte yPos : "mednafen.exe", 0x17D96C4;
-    byte yPos2 : "mednafen.exe", 0x17D96C5;
-    byte waterPos : "mednafen.exe", 0x17D9D63;
-    byte dead: "mednafen.exe", 0x17DFE84;
+byte timeUpper: "mednafen.exe", 0x1357D7E;
+byte time: "mednafen.exe", 0x1357D7F;
+byte demo: "mednafen.exe", 0x1357ED0;
+byte panelID: "mednafen.exe", 0x1357C78;
+byte page: "mednafen.exe", 0x1357C79;
+byte stage: "mednafen.exe", 0x1357C5F;
+//byte page_scroll: "mednafen.exe", 0x134BDE8;
+byte page_sheet: "mednafen.exe", 0x1357C02;
+byte page_sheet2: "mednafen.exe", 0x1357C03;
+ushort waterTimer: "mednafen.exe", 0x1351B48;
+byte switcher: "mednafen.exe", 0x1351DAC;
+byte ending: "mednafen.exe", 0x1357D16;
+byte animation: "mednafen.exe", 0x1351487;
+byte yPos: "mednafen.exe", 0x1351484;
+byte yPos2: "mednafen.exe", 0x1351485;
+byte waterPos: "mednafen.exe", 0x1351B23;
+byte dead: "mednafen.exe", 0x1357C44;
 }
-state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
+state("Mednafen", "1.29.0")
 {
-    byte timeUpper : "mednafen.exe", 0x1357D7E;//0x00c03e
-    byte time : "mednafen.exe", 0x1357D7F;//0x00c03f
-    byte demo : "mednafen.exe", 0x1357ED0;//0x00c190
-    byte panelID : "mednafen.exe", 0x1357C79;//0x00bf39
-    byte page : "mednafen.exe", 0x1357C78;//0x00bf38
-    byte stage : "mednafen.exe", 0x1357C5F;//0x00bf1f
-    //byte page_scroll : "mednafen.exe", 0x134BDE8;//0x0000a8
-    byte page_sheet:"mednafen.exe", 0x1357C02;//0x0bec2
-    byte page_sheet2:"mednafen.exe", 0x1357C03;//0x0bec3
-    ushort waterTimer : "mednafen.exe", 0x1351B48;//0x005e08
-    byte switcher : "mednafen.exe", 0x1351DAC;//0x00606c
-    byte ending : "mednafen.exe", 0x1357D17;//0x00bfd7
-    byte animation : "mednafen.exe", 0x1351487;//0x005747
-    byte yPos : "mednafen.exe", 0x1351484;//0x005744
-    byte yPos2 : "mednafen.exe", 0x1351485;//0x005745
-    byte waterPos : "mednafen.exe", 0x1351B23;//0x005de3
-    byte dead: "mednafen.exe", 0x1357C44;//0x0BF04
+byte timeUpper: "mednafen.exe", 0x1650BBE;
+byte time: "mednafen.exe", 0x1650BBF;
+byte demo: "mednafen.exe", 0x1650D10;
+byte panelID: "mednafen.exe", 0x1650AB8;
+byte page: "mednafen.exe", 0x1650AB9;
+byte stage: "mednafen.exe", 0x1650A9F;
+//byte page_scroll: "mednafen.exe", 0x1644C28;
+byte page_sheet: "mednafen.exe", 0x1650A42;
+byte page_sheet2: "mednafen.exe", 0x1650A43;
+ushort waterTimer: "mednafen.exe", 0x164A988;
+byte switcher: "mednafen.exe", 0x164ABEC;
+byte ending: "mednafen.exe", 0x1650B56;
+byte animation: "mednafen.exe", 0x164A2C7;
+byte yPos: "mednafen.exe", 0x164A2C4;
+byte yPos2: "mednafen.exe", 0x164A2C5;
+byte waterPos: "mednafen.exe", 0x164A963;
+byte dead: "mednafen.exe", 0x1650A84;
 }
-state("mednafen", "1.27.1") //RAM 0x00 == 0x16EEB80
+state("Retroarch", "1.16.0 BlastEm")
 {
-    byte timeUpper : "mednafen.exe", 0x16FABBE;//0x00c03e
-    byte time : "mednafen.exe", 0x16FABBF;//0x00c03f
-    byte demo : "mednafen.exe", 0x16FAD10;//0x00c190
-    byte panelID : "mednafen.exe", 0x16FAAB9;//0x00bf39
-    byte page : "mednafen.exe", 0x16FAAB8;//0x00bf38
-    byte stage : "mednafen.exe", 0x16FAA9F;//0x00bf1f
-    //byte page_scroll : "mednafen.exe", 0x16EEC28;//0x0000a8
-    byte page_sheet:"mednafen.exe", 0x16FAA42;//0x0bec2
-    byte page_sheet2:"mednafen.exe", 0x16FAA43;//0x0bec3
-    ushort waterTimer : "mednafen.exe", 0x16F4988;//0x005e08
-    byte switcher : "mednafen.exe", 0x16F4BEC;//0x00606c
-    byte ending : "mednafen.exe", 0x16FAB57;//0x00bfd7
-    byte animation : "mednafen.exe", 0x16F42C7;//0x005747
-    byte yPos : "mednafen.exe", 0x16F42C4;//0x005744
-    byte yPos2 : "mednafen.exe", 0x16F42C5;//0x005745
-    byte waterPos : "mednafen.exe", 0x16F4963;//0x005de3
-    byte dead: "mednafen.exe", 0x16FAA84;//0x0BF04
+byte timeUpper: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xC03F;
+byte time: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xC03E;
+byte demo: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xC191;
+byte panelID: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xBF39;
+byte page: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xBF38;
+byte stage: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xBF1E;
+//byte page_scroll: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xA9;
+byte page_sheet: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xBEC3;
+byte page_sheet2: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xBEC2;
+ushort waterTimer: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x5E09;
+byte switcher: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x606D;
+byte ending: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xBFD7;
+byte animation: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x5746;
+byte yPos: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x5745;
+byte yPos2: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x5744;
+byte waterPos: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x5DE2;
+byte dead: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xBF05;
 }
-state("retroarch", "1.9.8") //RAM 0x00 == "blastem_libretro.dll", 0x173B18, 0x198, 0x00; Little endian!
+state("emuhawk", "1.13.2")
 {
-    byte timeUpper : "blastem_libretro.dll", 0x173B18, 0x198, 0x00c03f;//0x00c03e
-    byte time : "blastem_libretro.dll", 0x173B18, 0x198, 0x00c03e;//0x00c03f
-    byte demo : "blastem_libretro.dll", 0x173B18, 0x198, 0x00c191;//0x00c190
-    byte panelID : "blastem_libretro.dll", 0x173B18, 0x198, 0x00bf38;//0x00bf39
-    byte page : "blastem_libretro.dll", 0x173B18, 0x198, 0x00bf39;//0x00bf38
-    byte stage : "blastem_libretro.dll", 0x173B18, 0x198, 0x00bf1e;//0x00bf1f
-    //byte page_scroll : "blastem_libretro.dll", 0x173B18, 0x198, 0x0000a9;//0x0000a8
-    byte page_sheet:"blastem_libretro.dll", 0x173B18, 0x198, 0x0bec3;//0x0bec2
-    byte page_sheet2:"blastem_libretro.dll", 0x173B18, 0x198, 0x0bec2;//0x0bec3
-    ushort waterTimer : "blastem_libretro.dll", 0x173B18, 0x198, 0x005e09;//0x005e08
-    byte switcher : "blastem_libretro.dll", 0x173B18, 0x198, 0x00606d;//0x00606c
-    byte ending : "blastem_libretro.dll", 0x173B18, 0x198, 0x00bfd6;//0x00bfd7
-    byte animation : "blastem_libretro.dll", 0x173B18, 0x198, 0x005746;//0x005747
-    byte yPos : "blastem_libretro.dll", 0x173B18, 0x198, 0x005745;//0x005744
-    byte yPos2 : "blastem_libretro.dll", 0x173B18, 0x198, 0x005744;//0x005745
-    byte waterPos : "blastem_libretro.dll", 0x173B18, 0x198, 0x005de2;//0x005de3
-    byte dead: "blastem_libretro.dll", 0x173B18, 0x198, 0x0BF05;//0x0BF04
+byte timeUpper: "libgenplusgx.dll", 0x000062D8, 0xC03F;
+byte time: "libgenplusgx.dll", 0x000062D8, 0xC03E;
+byte demo: "libgenplusgx.dll", 0x000062D8, 0xC191;
+byte panelID: "libgenplusgx.dll", 0x000062D8, 0xBF39;
+byte page: "libgenplusgx.dll", 0x000062D8, 0xBF38;
+byte stage: "libgenplusgx.dll", 0x000062D8, 0xBF1E;
+//byte page_scroll: "libgenplusgx.dll", 0x000062D8, 0xA9;
+byte page_sheet: "libgenplusgx.dll", 0x000062D8, 0xBEC3;
+byte page_sheet2: "libgenplusgx.dll", 0x000062D8, 0xBEC2;
+ushort waterTimer: "libgenplusgx.dll", 0x000062D8, 0x5E09;
+byte switcher: "libgenplusgx.dll", 0x000062D8, 0x606D;
+byte ending: "libgenplusgx.dll", 0x000062D8, 0xBFD7;
+byte animation: "libgenplusgx.dll", 0x000062D8, 0x5746;
+byte yPos: "libgenplusgx.dll", 0x000062D8, 0x5745;
+byte yPos2: "libgenplusgx.dll", 0x000062D8, 0x5744;
+byte waterPos: "libgenplusgx.dll", 0x000062D8, 0x5DE2;
+byte dead: "libgenplusgx.dll", 0x000062D8, 0xBF05;
 }
+
 update
 {
     //print(modules.First().ModuleMemorySize.ToString());
 }
 init
 {
-    if (modules.First().ModuleMemorySize == 90116096)
-        version = "1.27.1";
-    if (modules.First().ModuleMemorySize == 99102720)
-        version = "1.26.1";
-    else if (modules.First().ModuleMemorySize == 93294592)
+int memSize = modules.First().ModuleMemorySize;
+switch (memSize)
+{
+    case 91533312:
+        print("Detected Mednafen 1.29.0");
+        version = "1.29.0";
+        break;
+    case 93294592:
+        print("Detected Mednafen 0.9.48");
         version = "0.9.48";
+        break;
+    case 4104192:
+        print("Detected Kega Fusion 3.64");
+        version = "3.64";
+        break;
+    default:
+		print("Unknown Emulator");
+		version = "";
+		break;
+}
 }
 start
 {

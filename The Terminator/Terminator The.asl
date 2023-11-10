@@ -7,6 +7,15 @@ byte reset: "Fusion.exe", 0x2A52D4, 0xFE18;
 byte press: "Fusion.exe", 0x2A52D4, 0xFEFF;
 byte press2: "Fusion.exe", 0x2A52D4, 0xFEFE;
 }
+state("Mednafen", "0.9.48")
+{
+byte start: "mednafen.exe", 0x135BB5D;
+byte lvl: "mednafen.exe", 0x135BB6C;
+byte igt: "mednafen.exe", 0x135BB6F;
+byte reset: "mednafen.exe", 0x135BB58;
+byte press: "mednafen.exe", 0x135BC3F;
+byte press2: "mednafen.exe", 0x135BC3E;
+}
 state("Mednafen", "1.29.0")
 {
 byte start: "mednafen.exe", 0x165499D;
@@ -15,6 +24,15 @@ byte igt: "mednafen.exe", 0x16549AF;
 byte reset: "mednafen.exe", 0x1654998;
 byte press: "mednafen.exe", 0x1654A7F;
 byte press2: "mednafen.exe", 0x1654A7E;
+}
+state("Retroarch", "1.16.0 BlastEm")
+{
+byte start: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFE1C;
+byte lvl: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFE2D;
+byte igt: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFE2E;
+byte reset: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFE19;
+byte press: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFEFE;
+byte press2: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xFEFF;
 }
 state("emuhawk", "1.13.2")
 {
@@ -25,14 +43,28 @@ byte reset: "libgenplusgx.dll", 0x000062D8, 0xFE19;
 byte press: "libgenplusgx.dll", 0x000062D8, 0xFEFE;
 byte press2: "libgenplusgx.dll", 0x000062D8, 0xFEFF;
 }
-state("Retroarch", "1.14.0 BlastEm")
+init
 {
-byte start: "blastem_libretro.dll", 0x172B18, 0x198, 0xFE1C;
-byte lvl: "blastem_libretro.dll", 0x172B18, 0x198, 0xFE2D;
-byte igt: "blastem_libretro.dll", 0x172B18, 0x198, 0xFE2E;
-byte reset: "blastem_libretro.dll", 0x172B18, 0x198, 0xFE19;
-byte press: "blastem_libretro.dll", 0x172B18, 0x198, 0xFEFE;
-byte press2: "blastem_libretro.dll", 0x172B18, 0x198, 0xFEFF;
+int memSize = modules.First().ModuleMemorySize;
+switch (memSize)
+{
+    case 91533312:
+        print("Detected Mednafen 1.29.0");
+        version = "1.29.0";
+        break;
+    case 93294592:
+        print("Detected Mednafen 0.9.48");
+        version = "0.9.48";
+        break;
+    case 4104192:
+        print("Detected Kega Fusion 3.64");
+        version = "3.64";
+        break;
+    default:
+		print("Unknown Emulator");
+		version = "";
+		break;
+}
 }
 start
 {

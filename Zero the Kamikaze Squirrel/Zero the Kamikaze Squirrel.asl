@@ -1,33 +1,3 @@
-state("Retroarch", "1.14.0 BlastEm")
-{
-byte nullByte: "blastem_libretro.dll", 0x172B18, 0x198, 0x1;
-byte start: "blastem_libretro.dll", 0x172B18, 0x198, 0x115B;
-byte start2: "blastem_libretro.dll", 0x172B18, 0x198, 0x1159;
-byte menu: "blastem_libretro.dll", 0x172B18, 0x198, 0x12A;
-byte blockControll: "blastem_libretro.dll", 0x172B18, 0x198, 0x511;
-byte level: "blastem_libretro.dll", 0x172B18, 0x198, 0x12E;
-byte flagState: "blastem_libretro.dll", 0x172B18, 0x198, 0x12A;
-byte manualEndLevel: "blastem_libretro.dll", 0x172B18, 0x198, 0x12BE;
-byte timerEndLevel: "blastem_libretro.dll", 0x172B18, 0x198, 0x1038;
-byte flagAutoEndLevel: "blastem_libretro.dll", 0x172B18, 0x198, 0x1081;
-byte screenBright: "blastem_libretro.dll", 0x172B18, 0x198, 0x8DD2;
-byte demo: "blastem_libretro.dll", 0x172B18, 0x198, 0x100A;
-byte end: "blastem_libretro.dll", 0x172B18, 0x198, 0x1105;
-}
-state("ralibretro") //RAM 0x00 == "genesis_plus_gx_libretro.dll", 0x00298720, 0x0; Little endian!
-{
-    byte nullByte:              "genesis_plus_gx_libretro.dll", 0x00298720, 0x0000;
-    byte start:                 "genesis_plus_gx_libretro.dll", 0x00298720, 0xFFCB;
-    byte menu:                  "genesis_plus_gx_libretro.dll", 0x00298720, 0x00EC;
-    byte blockControll:         "genesis_plus_gx_libretro.dll", 0x00298720, 0x0511;
-    byte level:                 "genesis_plus_gx_libretro.dll", 0x00298720, 0x012e;
-    byte flagState:             "genesis_plus_gx_libretro.dll", 0x00298720, 0x012a; //value = 0x18 endValue = 0x2C reset = 0x00
-    byte manualEndLevel:        "genesis_plus_gx_libretro.dll", 0x00298720, 0x12be; //value = 0x50
-    byte timerEndLevel:         "genesis_plus_gx_libretro.dll", 0x00298720, 0x1038;
-    ushort flagAutoEndLevel:    "genesis_plus_gx_libretro.dll", 0x00298720, 0x1004; //value = 0xFFFF
-    ushort screenBright:        "genesis_plus_gx_libretro.dll", 0x00298720, 0x1080; //value = 0xFFFF
-    byte demo:                  "genesis_plus_gx_libretro.dll", 0x00298720, 0x100a;
-}
 state("Fusion", "3.64")
 {
 byte nullByte: "Fusion.exe", 0x2A52D4, 0x0;
@@ -76,6 +46,38 @@ byte screenBright: "mednafen.exe", 0x164D953;
 byte demo: "mednafen.exe", 0x1645B8B;
 byte end: "mednafen.exe", 0x1645C84;
 }
+state("Retroarch", "1.16.0 BlastEm")
+{
+byte nullByte: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x1;
+byte start: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x115B;
+byte start2: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x1159;
+byte menu: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x12A;
+byte blockControll: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x511;
+byte level: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x12E;
+byte flagState: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x12A;
+byte manualEndLevel: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x12BE;
+byte timerEndLevel: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x1038;
+byte flagAutoEndLevel: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x1081;
+byte screenBright: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x8DD2;
+byte demo: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x100A;
+byte end: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0x1105;
+}
+state("Retroarch", "1.16.0 GX")
+{
+byte nullByte: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x1;
+byte start: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x115B;
+byte start2: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x1159;
+byte menu: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x12A;
+byte blockControll: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x511;
+byte level: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x12E;
+byte flagState: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x12A;
+byte manualEndLevel: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x12BE;
+byte timerEndLevel: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x1038;
+byte flagAutoEndLevel: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x1081;
+byte screenBright: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x8DD2;
+byte demo: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x100A;
+byte end: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x1105;
+}
 state("emuhawk", "1.13.2")
 {
 byte nullByte: "libgenplusgx.dll", 0x000062D8, 0x1;
@@ -92,6 +94,7 @@ byte screenBright: "libgenplusgx.dll", 0x000062D8, 0x8DD2;
 byte demo: "libgenplusgx.dll", 0x000062D8, 0x100A;
 byte end: "libgenplusgx.dll", 0x000062D8, 0x1105;
 }
+
 start
 {
     //return current.demo != 0x01 && current.level == 0x00 && old.blockControll == 0x01 && current.blockControll == 0x00;
@@ -139,8 +142,24 @@ startup
 }
 init
 {
-     if (modules.First().ModuleMemorySize == 93294592)
-        version = "0.9.48";
-    else if (modules.First().ModuleMemorySize == 91533312)  
+int memSize = modules.First().ModuleMemorySize;
+switch (memSize)
+{
+    case 91533312:
+        print("Detected Mednafen 1.29.0");
         version = "1.29.0";
+        break;
+    case 93294592:
+        print("Detected Mednafen 0.9.48");
+        version = "0.9.48";
+        break;
+    case 4104192:
+        print("Detected Kega Fusion 3.64");
+        version = "3.64";
+        break;
+    default:
+		print("Unknown Emulator");
+		version = "";
+		break;
+}
 }

@@ -1,25 +1,45 @@
-state ("Fusion") //RAM 0x00 == "Fusion.exe", 0x2A52D4, 0x00;
+state("Fusion", "3.64")
 {
-	byte start:"Fusion.exe", 0x2A52D4, 0x0DC2;
+byte start: "Fusion.exe", 0x2A52D4, 0xDC2;
 }
-state("mednafen", "1.27.1") //RAM 0x00 == 0x16EEB80
+state("Mednafen", "0.9.48")
 {
-	byte start:"mednafen.exe", 0x16EF942; //0DC2
+byte start: "mednafen.exe", 0x134CB02;
 }
-state("mednafen", "0.9.48") //RAM 0x00 == 0x134BD40
+state("Mednafen", "1.29.0")
 {
-	byte start:"mednafen.exe", 0x134CB02; //0DC2
+byte start: "mednafen.exe", 0x1645942;
 }
-state("retroarch", "1.9.8") //RAM 0x00 == "blastem_libretro.dll", 0x173B18, 0x198, 0x00; Little endian!
+state("Retroarch", "1.16.0 BlastEm")
 {
-	byte start:"blastem_libretro.dll", 0x173B18, 0x198, 0x0DC3; //0DC2
+byte start: "blastem_libretro.dll", 0x0172B18, 0xD0, 0x58, 0xDC3;
+}
+state("emuhawk", "1.13.2")
+{
+byte start: "libgenplusgx.dll", 0x000062D8, 0xDC3;
 }
 init
 {
-    if (modules.First().ModuleMemorySize == 90116096)
-        version = "1.27.1";
-    else if (modules.First().ModuleMemorySize == 93294592)
+int memSize = modules.First().ModuleMemorySize;
+switch (memSize)
+{
+    case 91533312:
+        print("Detected Mednafen 1.29.0");
+        version = "1.29.0";
+        break;
+    case 93294592:
+        print("Detected Mednafen 0.9.48");
         version = "0.9.48";
+        break;
+    case 4104192:
+        print("Detected Kega Fusion 3.64");
+        version = "3.64";
+        break;
+    default:
+		print("Unknown Emulator");
+		version = "";
+		break;
+}
 }
 start
 {
