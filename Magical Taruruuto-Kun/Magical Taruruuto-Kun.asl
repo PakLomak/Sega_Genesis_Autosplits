@@ -84,17 +84,21 @@ split
     {
     if (old.Level == 0x05 && current.Level == 0x06)return true; // Jabao 
     if (old.Level == 0x06 && current.Level == 0x07)return true; // Magic Kingdom 
-    if (old.Level == 0x0D && current.Level == 0x0F)return true; // Mikotaka
+    if (old.Level == 0x0B && current.Level == 0x0F)return true; // Mikotaka
     if (old.Level == 0x0F && current.Level == 0x10)return true; // Magic Kingdom
-    if (old.Level == 0x12 && current.Level == 0x13)return true; // Picture Book Forest
+    if (old.Level == 0x12 && current.Level == 0x13)return true; // Mimora
+    if (old.Level == 0x13 && current.Level == 0x14)return true; // Picture Book Forest
     if (old.Level == 0x16 && current.Level == 0x18)return true; // Picture Book Sky
     if (old.Level == 0x19 && current.Level == 0x1C)return true; // Picture Book Mountain
-    if (old.Level == 0x1D && current.Level == 0x1F)return true; // Dowahha
+    if (old.Level == 0x1E && current.Level == 0x1F)return true; // Dowahha
     if (old.Level == 0x1F && current.Level == 0x20)return true; // Highway
     if (old.Level == 0x22 && current.Level == 0x23)return true; // Castle
     if (old.Level == 0x42 && current.Level == 0x43)return true; // Castle
     }
-    if (current.Level == 0x43 && old.BossHP == 0x02 && current.BossHP == 0x81 || current.Level == 0x43 && old.BossHP == 0x81 && current.BossHP == 0x01) return true;
+    if (current.Level == 0x43){
+        if (old.BossHP == 0x02 && current.BossHP == 0x81 || old.BossHP != 0x01 && current.BossHP == 0x01) return true;
+        if (old.Sega_2 == 0xD6 && current.Sega_2 == 0x7D) return true;
+    }
 }
 reset
 {
