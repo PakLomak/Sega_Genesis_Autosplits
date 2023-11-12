@@ -104,6 +104,7 @@ startup
 {
 	settings.Add("main", false, "AutoSplitter for Magical Taruruuto-Kun by PakLomak");
 	settings.Add("main3", false, "--https://www.twitch.tv/paklomak", "main");
-    settings.Add("All", true, "Split by all screen", "options");
-    settings.Add("Stage", false, "Split by Stages & Bosses", "options");
+    settings.Add("options", true, "Options");
+    settings.Add("All", false, "Split by all screen", "options");
+    settings.Add("Stage", true, "Split by Stages & Bosses", "options");
 }
