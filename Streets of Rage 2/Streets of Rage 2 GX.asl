@@ -6,6 +6,7 @@ byte lvl: "Fusion.exe", 0x2A52D4, 0xFC43;
 byte done: "Fusion.exe", 0x2A52D4, 0xA20E;
 byte reset: "Fusion.exe", 0x2A52D4, 0xF007;
 byte time: "Fusion.exe", 0x2A52D4, 0xFC3C;
+byte Charter: "Fusion.exe", 0x2A52D4, 0xEF3A;
 }
 state("Mednafen", "0.9.48")
 {
@@ -15,6 +16,7 @@ byte lvl: "mednafen.exe", 0x135B983;
 byte done: "mednafen.exe", 0x1355F4E;
 byte reset: "mednafen.exe", 0x135AD47;
 byte time: "mednafen.exe", 0x135B97C;
+byte Charter: "mednafen.exe", 0x135AC7A;
 }
 state("Mednafen", "1.29.0")
 {
@@ -24,6 +26,7 @@ byte lvl: "mednafen.exe", 0x16547C3;
 byte done: "mednafen.exe", 0x164ED8E;
 byte reset: "mednafen.exe", 0x1653B87;
 byte time: "mednafen.exe", 0x16547BC;
+byte Charter: "mednafen.exe", 0x1653ABA;
 }
 state("Retroarch", "1.16.0 GX")
 {
@@ -33,6 +36,7 @@ byte lvl: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFC42;
 byte done: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xA20F;
 byte reset: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xF006;
 byte time: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFC3D;
+byte Charter: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xEF3B;
 }
 state("emuhawk", "1.13.2")
 {
@@ -42,7 +46,9 @@ byte lvl: "libgenplusgx.dll", 0x000062D8, 0xFC42;
 byte done: "libgenplusgx.dll", 0x000062D8, 0xA20F;
 byte reset: "libgenplusgx.dll", 0x000062D8, 0xF006;
 byte time: "libgenplusgx.dll", 0x000062D8, 0xFC3D;
+byte Charter: "libgenplusgx.dll", 0x000062D8, 0xEF3B;
 }
+
 init
 {
 int memSize = modules.First().ModuleMemorySize;
@@ -68,7 +74,8 @@ switch (memSize)
 }
 start
 {
-    if (current.time == 0x99 && current.idlvl == 0x00) vars.Start = true;
+    //if (current.time == 0x99 && current.idlvl == 0x00) vars.Start = true;
+    if (old.Charter == 0x00 && current.Charter == 0xFF) vars.Start = true;
     if (old.start == 0x16 && current.start == 0xFF && vars.Start == true)
     {
         vars.Start = false;
