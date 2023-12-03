@@ -76,7 +76,7 @@ start
 {
     //if (current.time == 0x99 && current.idlvl == 0x00) vars.Start = true;
     if (old.Charter == 0x00 && current.Charter == 0xFF) vars.Start = true;
-    if (old.start == 0x16 && current.start == 0xFF && vars.Start == true)
+    if (current.idlvl == 0x00 && old.start == 0x16 && current.start == 0xFF && vars.Start == true)
     {
         vars.Start = false;
         return true;
