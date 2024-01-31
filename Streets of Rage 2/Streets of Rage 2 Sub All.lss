@@ -107,7 +107,7 @@
   </AttemptHistory>
   <Segments>
     <Segment>
-      <Name>Downtown</Name>
+      <Name>-Downtown</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -196,7 +196,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Bar</Name>
+      <Name>-Bar</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -270,7 +270,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Barbon</Name>
+      <Name>{Stage 1}Barbon</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -338,7 +338,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Bridge Construction</Name>
+      <Name>-Bridge Construction</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -400,7 +400,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Truck</Name>
+      <Name>-Truck</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -459,7 +459,31 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Jet</Name>
+      <Name>-Bridge </Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory>
+        <Time id="8" />
+        <Time id="9" />
+        <Time id="13" />
+        <Time id="34" />
+        <Time id="37" />
+        <Time id="38" />
+        <Time id="39" />
+        <Time id="41" />
+        <Time id="42" />
+        <Time id="45" />
+        <Time id="46" />
+        <Time id="47" />
+        <Time id="55" />
+        <Time id="63" />
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>{Stage 2}Jet</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -515,7 +539,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Amusement Park</Name>
+      <Name>-Amusement Park</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -571,7 +595,55 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Pirates attraction</Name>
+      <Name>-Arcade Hall</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory>
+        <Time id="8" />
+        <Time id="9" />
+        <Time id="13" />
+        <Time id="34" />
+        <Time id="37" />
+        <Time id="38" />
+        <Time id="39" />
+        <Time id="41" />
+        <Time id="42" />
+        <Time id="45" />
+        <Time id="46" />
+        <Time id="47" />
+        <Time id="55" />
+        <Time id="63" />
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>-In the hold</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory>
+        <Time id="8" />
+        <Time id="9" />
+        <Time id="13" />
+        <Time id="34" />
+        <Time id="37" />
+        <Time id="38" />
+        <Time id="39" />
+        <Time id="41" />
+        <Time id="42" />
+        <Time id="45" />
+        <Time id="46" />
+        <Time id="47" />
+        <Time id="55" />
+        <Time id="63" />
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>-Pirates attraction</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -627,7 +699,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Park</Name>
+      <Name>-Park</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -683,7 +755,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Alien House</Name>
+      <Name>-Alien House</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -736,7 +808,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Zamza</Name>
+      <Name>{Stage 3}Zamza</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -789,7 +861,30 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Stadium</Name>
+      <Name>-Ouside</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory>
+        <Time id="9" />
+        <Time id="13" />
+        <Time id="34" />
+        <Time id="37" />
+        <Time id="38" />
+        <Time id="39" />
+        <Time id="41" />
+        <Time id="42" />
+        <Time id="45" />
+        <Time id="46" />
+        <Time id="47" />
+        <Time id="55" />
+        <Time id="63" />
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>-Stadium</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -842,7 +937,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Secret Elevator</Name>
+      <Name>-Secret Elevator</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -895,7 +990,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Abadede</Name>
+      <Name>{Stage 4}Abadede</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -948,7 +1043,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Ship bilge</Name>
+      <Name>-Ship bilge 1</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -1001,7 +1096,30 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Ship deck</Name>
+      <Name>-Ship bilge 2</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory>
+        <Time id="9" />
+        <Time id="13" />
+        <Time id="34" />
+        <Time id="37" />
+        <Time id="38" />
+        <Time id="39" />
+        <Time id="41" />
+        <Time id="42" />
+        <Time id="45" />
+        <Time id="46" />
+        <Time id="47" />
+        <Time id="55" />
+        <Time id="63" />
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>-Ship deck</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -1054,7 +1172,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>R. Bear</Name>
+      <Name>{Stage 5}R. Bear</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -1107,7 +1225,29 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Jungle Base</Name>
+      <Name>-Beach</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory>
+        <Time id="9" />
+        <Time id="13" />
+        <Time id="37" />
+        <Time id="38" />
+        <Time id="39" />
+        <Time id="41" />
+        <Time id="42" />
+        <Time id="45" />
+        <Time id="46" />
+        <Time id="47" />
+        <Time id="55" />
+        <Time id="63" />
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>-Jungle Base 1</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -1157,7 +1297,29 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Souther and Stealth</Name>
+      <Name>-Jungle Base 2</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory>
+        <Time id="9" />
+        <Time id="13" />
+        <Time id="37" />
+        <Time id="38" />
+        <Time id="39" />
+        <Time id="41" />
+        <Time id="42" />
+        <Time id="45" />
+        <Time id="46" />
+        <Time id="47" />
+        <Time id="55" />
+        <Time id="63" />
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>{Stage 6}Souther and Stealth</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -1207,7 +1369,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Munitions Plant</Name>
+      <Name>-Munitions Plant 1</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -1257,7 +1419,28 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Cargo Elevator</Name>
+      <Name>-Munitions Plant 2</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory>
+        <Time id="9" />
+        <Time id="13" />
+        <Time id="37" />
+        <Time id="38" />
+        <Time id="41" />
+        <Time id="42" />
+        <Time id="45" />
+        <Time id="46" />
+        <Time id="47" />
+        <Time id="55" />
+        <Time id="63" />
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>-Cargo Elevator 1</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -1304,7 +1487,28 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Particle and Molecule</Name>
+      <Name>-Cargo Elevator 2</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory>
+        <Time id="9" />
+        <Time id="13" />
+        <Time id="37" />
+        <Time id="38" />
+        <Time id="41" />
+        <Time id="42" />
+        <Time id="45" />
+        <Time id="46" />
+        <Time id="47" />
+        <Time id="55" />
+        <Time id="63" />
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>{Stage 7}Particle and Molecule</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -1351,7 +1555,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Syndicate Stronghold</Name>
+      <Name>-Syndicate Stronghold</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -1398,7 +1602,7 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Elevator</Name>
+      <Name>-Uulture</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
@@ -1445,7 +1649,49 @@
       </SegmentHistory>
     </Segment>
     <Segment>
-      <Name>Shiva &amp; Mr. X</Name>
+      <Name>-Nail</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory>
+        <Time id="9" />
+        <Time id="13" />
+        <Time id="37" />
+        <Time id="38" />
+        <Time id="41" />
+        <Time id="42" />
+        <Time id="45" />
+        <Time id="46" />
+        <Time id="47" />
+        <Time id="55" />
+        <Time id="63" />
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>-Z. Kusano</Name>
+      <Icon />
+      <SplitTimes>
+        <SplitTime name="Personal Best" />
+      </SplitTimes>
+      <BestSegmentTime />
+      <SegmentHistory>
+        <Time id="9" />
+        <Time id="13" />
+        <Time id="37" />
+        <Time id="38" />
+        <Time id="41" />
+        <Time id="42" />
+        <Time id="45" />
+        <Time id="46" />
+        <Time id="47" />
+        <Time id="55" />
+        <Time id="63" />
+      </SegmentHistory>
+    </Segment>
+    <Segment>
+      <Name>{Stage 8}Shiva &amp; Mr. X</Name>
       <Icon />
       <SplitTimes>
         <SplitTime name="Personal Best">
