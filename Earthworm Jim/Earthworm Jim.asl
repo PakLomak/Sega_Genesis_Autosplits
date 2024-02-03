@@ -121,12 +121,12 @@ split
         vars.DethBathysphere = false;
         return true;
     } // New Junk City -> andy asteroids?
-    if (old.Level == 0x10 && current.Level == 0x01) return true; // andy asteroids? -> What the heck? (Hell or Heck?)
+    if (old.Level == 0x10 && current.Level == 0x01 || old.Level == 0x1C && current.Level == 0x01) return true; // andy asteroids? -> What the heck? (Hell or Heck?)
     if (settings["Snowman"] && old.Level == 0x01 && current.Level == 0x02) return true; // What the heck? -> What the heck? (Snowman Boss)
     if (settings["SnowmanDeth"] && old.Level == 0x02 && current.Level == 0x01) return true; // What the heck? (Snowman Boss) -> What the heck?
     if (old.Level == 0x01 && current.Level == 0x03) return true; // What the heck? - > What the heck? (Evil Boss)
     if (settings["asteroids"] && old.Level == 0x03 && current.Level == 0x11) return true; // What the heck? (Evil Boss) -> andy asteroids?
-    if (old.Level == 0x11 && current.Level == 0x0E) return true; // andy asteroids? -> Down the tubes
+    if (old.Level == 0x11 && current.Level == 0x0E || old.Level == 0x1C && current.Level == 0x0E) return true; // andy asteroids? -> Down the tubes
     if (settings["BathysphereShort"])
     {
         if (current.HpBathysphere >= 0x12 || current.BathysphereTime == 0x00) vars.DethBathysphere = true;
@@ -173,17 +173,17 @@ split
     }
     //if (settings["tubes"] && old.Level == 0x0E && current.Level == 0x0F) return true; // Down the tubes -> Down the tubes?
     if (settings["asteroids"] && old.Level == 0x0F && current.Level == 0x12) return true; // Down the tubes? -> andy asteroids?
-    if (old.Level == 0x12 && current.Level == 0x04) return true; // andy asteroids? -> Snot a problem! Round 1
+    if (old.Level == 0x12 && current.Level == 0x04 || old.Level == 0x1C && current.Level == 0x04) return true; // andy asteroids? -> Snot a problem! Round 1
     if (old.Level == 0x04 && current.Level == 0x05) return true; // Snot a problem! Round 1 -> Snot a problem! Round 2
     if (old.Level == 0x05 && current.Level == 0x06) return true; // Snot a problem! Round 2 -> Snot a problem! Round 3
     if (settings["asteroids"] && old.Level == 0x06 && current.Level == 0x13) return true; // Snot a problem! Round 3 -> andy asteroids?
-    if (old.Level == 0x13 && current.Level == 0x0A) return true; // andy asteroids? -> Level 5
+    if (old.Level == 0x13 && current.Level == 0x0A || old.Level == 0x1C && current.Level == 0x0A) return true; // andy asteroids? -> Level 5
     if (settings["asteroids"] && old.Level == 0x0B && current.Level == 0x14) return true; // Level 5 -> andy asteroids?
-    if (old.Level == 0x14 && current.Level == 0x07) return true; // andy asteroids? -> For pete's sake!
+    if (old.Level == 0x14 && current.Level == 0x07 || old.Level == 0x1C && current.Level == 0x07) return true; // andy asteroids? -> For pete's sake!
     if (settings["asteroids"] && old.Level == 0x07 && current.Level == 0x15) return true; // For pete's sake! -> andy asteroids?
-    if (old.Level == 0x15 && current.Level == 0x0D) return true; // andy asteroids? -> intestinal distress!
+    if (old.Level == 0x15 && current.Level == 0x0D || old.Level == 0x1C && current.Level == 0x0D) return true; // andy asteroids? -> intestinal distress!
     if (settings["asteroids"] && old.Level == 0x0D && current.Level == 0x16) return true; // intestinal distress! -> andy asteroids?
-    if (old.Level == 0x16 && current.Level == 0x09) return true; // andy asteroids? -> buttville (Helicopter)
+    if (old.Level == 0x16 && current.Level == 0x09 || old.Level == 0x1C && current.Level == 0x09) return true; // andy asteroids? -> buttville (Helicopter)
     if (settings["Helicopter"] && old.Level == 0x09 && current.Level == 0x08) return true; // buttville (Helicopter) -> buttville (Slug)
     if (current.Level == 0x08 && old.FinalBossDeath == 0x00 && current.FinalBossDeath == 0x01) return true; // buttville Final Boss
 }
