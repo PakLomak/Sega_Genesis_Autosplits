@@ -4,7 +4,7 @@ byte ChangeScreen: "Fusion.exe", 0x2A52D4, 0x9928;
 byte ChangeScreen2: "Fusion.exe", 0x2A52D4, 0x9929;
 byte Demo: "Fusion.exe", 0x2A52D4, 0xFF98;
 byte Level: "Fusion.exe", 0x2A52D4, 0xA692;
-byte FinalBossDeath: "Fusion.exe", 0x2A52D4, 0xFD58;
+byte FinalBossDeath: "Fusion.exe", 0x2A52D4, 0xFD5A;
 byte BathysphereTime: "Fusion.exe", 0x2A52D4, 0xFCA1;
 byte InOutBathysphere: "Fusion.exe", 0x2A52D4, 0xFD4F;
 byte CheckPoint: "Fusion.exe", 0x2A52D4, 0xFDE0;
@@ -16,7 +16,7 @@ byte ChangeScreen: "mednafen.exe", 0x1355668;
 byte ChangeScreen2: "mednafen.exe", 0x1355669;
 byte Demo: "mednafen.exe", 0x135BCD8;
 byte Level: "mednafen.exe", 0x13563D2;
-byte FinalBossDeath: "mednafen.exe", 0x135BA98;
+byte FinalBossDeath: "mednafen.exe", 0x135BA9A;
 byte BathysphereTime: "mednafen.exe", 0x135B9E1;
 byte InOutBathysphere: "mednafen.exe", 0x135BA8F;
 byte CheckPoint: "mednafen.exe", 0x135BB20;
@@ -28,7 +28,7 @@ byte ChangeScreen: "mednafen.exe", 0x164E4A8;
 byte ChangeScreen2: "mednafen.exe", 0x164E4A9;
 byte Demo: "mednafen.exe", 0x1654B18;
 byte Level: "mednafen.exe", 0x164F212;
-byte FinalBossDeath: "mednafen.exe", 0x16548D8;
+byte FinalBossDeath: "mednafen.exe", 0x16548DA;
 byte BathysphereTime: "mednafen.exe", 0x1654821;
 byte InOutBathysphere: "mednafen.exe", 0x16548CF;
 byte CheckPoint: "mednafen.exe", 0x1654960;
@@ -40,7 +40,7 @@ byte ChangeScreen: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x9929;
 byte ChangeScreen2: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x9928;
 byte Demo: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFF99;
 byte Level: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xA693;
-byte FinalBossDeath: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFD59;
+byte FinalBossDeath: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFD5B;
 byte BathysphereTime: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFCA0;
 byte InOutBathysphere: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFD4E;
 byte CheckPoint: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFDE1;
@@ -52,13 +52,30 @@ byte ChangeScreen: "libgenplusgx.dll", 0x000062D8, 0x9929;
 byte ChangeScreen2: "libgenplusgx.dll", 0x000062D8, 0x9928;
 byte Demo: "libgenplusgx.dll", 0x000062D8, 0xFF99;
 byte Level: "libgenplusgx.dll", 0x000062D8, 0xA693;
-byte FinalBossDeath: "libgenplusgx.dll", 0x000062D8, 0xFD59;
+byte FinalBossDeath: "libgenplusgx.dll", 0x000062D8, 0xFD5B;
 byte BathysphereTime: "libgenplusgx.dll", 0x000062D8, 0xFCA0;
 byte InOutBathysphere: "libgenplusgx.dll", 0x000062D8, 0xFD4E;
 byte CheckPoint: "libgenplusgx.dll", 0x000062D8, 0xFDE1;
 byte HpBathysphere: "libgenplusgx.dll", 0x000062D8, 0xAFDF;
 }
+update
+{
+    if (settings.ResetEnabled == false && timer.CurrentPhase != TimerPhase.NotRunning && timer.CurrentPhase != TimerPhase.Ended)
+    {
+        if (current.ChangeScreen == 0x82 && current.ChangeScreen2 == 0xCC && current.Level == 0x00 && current.HpBathysphere == 0x00 && vars.worms == false)
+        {
+            while (timer.CurrentSplitIndex > 0)
+            {
+                if (timer.CurrentPhase == TimerPhase.Ended)
+                    timer.CurrentPhase = TimerPhase.Running;
+                timer.CurrentSplitIndex--;
 
+            timer.CurrentSplit.SplitTime = default(Time);
+            timer.Run.HasChanged = true;
+            }
+        }
+    }
+}
 init
 {
 int memSize = modules.First().ModuleMemorySize;
@@ -107,7 +124,7 @@ start
 }
 reset
 {
-    if (current.ChangeScreen == 0x89 && current.ChangeScreen2 == 0xC2) vars.worms = true;
+    //if (current.ChangeScreen == 0x89 && current.ChangeScreen2 == 0xC2) vars.worms = true;
     if (current.ChangeScreen == 0x82 && current.ChangeScreen2 == 0xCC && current.Level == 0x00 && current.HpBathysphere == 0x00 && vars.worms == false) return true;
 }
 split
@@ -185,7 +202,7 @@ split
     if (settings["asteroids"] && old.Level == 0x0D && current.Level == 0x16) return true; // intestinal distress! -> andy asteroids?
     if (old.Level == 0x16 && current.Level == 0x09 || old.Level == 0x1C && current.Level == 0x09) return true; // andy asteroids? -> buttville (Helicopter)
     if (settings["Helicopter"] && old.Level == 0x09 && current.Level == 0x08) return true; // buttville (Helicopter) -> buttville (Slug)
-    if (current.Level == 0x08 && old.FinalBossDeath == 0x00 && current.FinalBossDeath == 0x01) return true; // buttville Final Boss
+    if (current.Level == 0x08 && old.FinalBossDeath == 0x00 && current.FinalBossDeath == 0xFF) return true; // buttville Final Boss
 }
 startup
 {
