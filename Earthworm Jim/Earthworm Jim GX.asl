@@ -4,7 +4,7 @@ byte ChangeScreen: "Fusion.exe", 0x2A52D4, 0x9928;
 byte ChangeScreen2: "Fusion.exe", 0x2A52D4, 0x9929;
 byte Demo: "Fusion.exe", 0x2A52D4, 0xFF98;
 byte Level: "Fusion.exe", 0x2A52D4, 0xA692;
-byte FinalBossDeath: "Fusion.exe", 0x2A52D4, 0xFD5A;
+byte FinalBossDeath: "Fusion.exe", 0x2A52D4, 0xFF78;
 byte BathysphereTime: "Fusion.exe", 0x2A52D4, 0xFCA1;
 byte InOutBathysphere: "Fusion.exe", 0x2A52D4, 0xFD4F;
 byte CheckPoint: "Fusion.exe", 0x2A52D4, 0xFDE0;
@@ -16,7 +16,7 @@ byte ChangeScreen: "mednafen.exe", 0x1355668;
 byte ChangeScreen2: "mednafen.exe", 0x1355669;
 byte Demo: "mednafen.exe", 0x135BCD8;
 byte Level: "mednafen.exe", 0x13563D2;
-byte FinalBossDeath: "mednafen.exe", 0x135BA9A;
+byte FinalBossDeath: "mednafen.exe", 0x135BCB8;
 byte BathysphereTime: "mednafen.exe", 0x135B9E1;
 byte InOutBathysphere: "mednafen.exe", 0x135BA8F;
 byte CheckPoint: "mednafen.exe", 0x135BB20;
@@ -28,7 +28,7 @@ byte ChangeScreen: "mednafen.exe", 0x164E4A8;
 byte ChangeScreen2: "mednafen.exe", 0x164E4A9;
 byte Demo: "mednafen.exe", 0x1654B18;
 byte Level: "mednafen.exe", 0x164F212;
-byte FinalBossDeath: "mednafen.exe", 0x16548DA;
+byte FinalBossDeath: "mednafen.exe", 0x1654AF8;
 byte BathysphereTime: "mednafen.exe", 0x1654821;
 byte InOutBathysphere: "mednafen.exe", 0x16548CF;
 byte CheckPoint: "mednafen.exe", 0x1654960;
@@ -40,7 +40,7 @@ byte ChangeScreen: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x9929;
 byte ChangeScreen2: "genesis_plus_gx_libretro.dll", 0x07118A0, 0x9928;
 byte Demo: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFF99;
 byte Level: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xA693;
-byte FinalBossDeath: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFD5B;
+byte FinalBossDeath: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFF79;
 byte BathysphereTime: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFCA0;
 byte InOutBathysphere: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFD4E;
 byte CheckPoint: "genesis_plus_gx_libretro.dll", 0x07118A0, 0xFDE1;
@@ -52,12 +52,13 @@ byte ChangeScreen: "libgenplusgx.dll", 0x000062D8, 0x9929;
 byte ChangeScreen2: "libgenplusgx.dll", 0x000062D8, 0x9928;
 byte Demo: "libgenplusgx.dll", 0x000062D8, 0xFF99;
 byte Level: "libgenplusgx.dll", 0x000062D8, 0xA693;
-byte FinalBossDeath: "libgenplusgx.dll", 0x000062D8, 0xFD5B;
+byte FinalBossDeath: "libgenplusgx.dll", 0x000062D8, 0xFF79;
 byte BathysphereTime: "libgenplusgx.dll", 0x000062D8, 0xFCA0;
 byte InOutBathysphere: "libgenplusgx.dll", 0x000062D8, 0xFD4E;
 byte CheckPoint: "libgenplusgx.dll", 0x000062D8, 0xFDE1;
 byte HpBathysphere: "libgenplusgx.dll", 0x000062D8, 0xAFDF;
 }
+
 update
 {
     if (settings.ResetEnabled == false && timer.CurrentPhase != TimerPhase.NotRunning && timer.CurrentPhase != TimerPhase.Ended)
