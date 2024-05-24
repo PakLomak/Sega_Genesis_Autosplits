@@ -34,17 +34,17 @@ byte latter1: "mednafen.exe", 0x164FD18;
 byte latter2: "mednafen.exe", 0x164FD74;
 byte scene: "mednafen.exe", 0x164EB83;
 }
-state("Retroarch", "GX")
+state("Retroarch", "BlastEm")
 {
-byte stage: "genesis_plus_gx_libretro.dll", 0x00763150, 0xFA49;
-byte player: "genesis_plus_gx_libretro.dll", 0x00763150, 0xD702;
-byte scroling: "genesis_plus_gx_libretro.dll", 0x00763150, 0xA0E9;
-byte scroling2: "genesis_plus_gx_libretro.dll", 0x00763150, 0xA0E8;
-byte movie: "genesis_plus_gx_libretro.dll", 0x00763150, 0xA0D8;
-byte animation3: "genesis_plus_gx_libretro.dll", 0x00763150, 0xB182;
-byte latter1: "genesis_plus_gx_libretro.dll", 0x00763150, 0xB199;
-byte latter2: "genesis_plus_gx_libretro.dll", 0x00763150, 0xB1F5;
-byte scene: "genesis_plus_gx_libretro.dll", 0x00763150, 0xA002;
+byte stage: "blastem_libretro.dll", 0x0172B18, 0x198, 0xFA49;
+byte player: "blastem_libretro.dll", 0x0172B18, 0x198, 0xD702;
+byte scroling: "blastem_libretro.dll", 0x0172B18, 0x198, 0xA0E9;
+byte scroling2: "blastem_libretro.dll", 0x0172B18, 0x198, 0xA0E8;
+byte movie: "blastem_libretro.dll", 0x0172B18, 0x198, 0xA0D8;
+byte animation3: "blastem_libretro.dll", 0x0172B18, 0x198, 0xB182;
+byte latter1: "blastem_libretro.dll", 0x0172B18, 0x198, 0xB199;
+byte latter2: "blastem_libretro.dll", 0x0172B18, 0x198, 0xB1F5;
+byte scene: "blastem_libretro.dll", 0x0172B18, 0x198, 0xA002;
 }
 state("emuhawk", "1.13.2")
 {
