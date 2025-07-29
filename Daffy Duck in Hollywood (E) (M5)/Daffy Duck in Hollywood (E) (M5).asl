@@ -105,7 +105,7 @@ init
 {
     vars.start = false;
     vars.SpLitON = false;
-    vars.bossDead = false;
+    vars.bossDEAD = false;
     vars.LastBoss = false;
 int memSize = modules.First().ModuleMemorySize;
 switch (memSize)
@@ -137,8 +137,8 @@ start{
     if (current.LVL <= 0x05 && old.start == 0x03 && current.start == 0x00 && vars.start == true && current.bomb_time == 0x00){
         vars.start = false;
         vars.SpLitON = false;
-        vars.bossDead = false;
         vars.LastBoss = false;
+        vars.bossDEAD = false;
         return true;
     }
 }
@@ -146,7 +146,7 @@ reset{
     if (old.screen_savers == 0x00 && current.screen_savers == 0x90 && current.LVL == 0x00){
         vars.start = false;
         vars.SpLitON = false;
-        vars.bossDead = false;
+        vars.bossDEAD = false;
         vars.LastBoss = false;
         return true;
     }
@@ -170,10 +170,13 @@ split{
         vars.SpLitON = false;
         return true;
     }
-    if (settings["AterBoss"] && old.start == 0x00 && current.start == 0x03 && current.bomb_time != 0x00) {
+    if (settings["AterBoss"]){
+        if (current.bossHP1 == 0xFF && current.bossHP2 == 0xFF) vars.bossDEAD = true;
+        if (old.start == 0x00 && current.start == 0x03 && current.bomb_time != 0x00 && vars.bossDEAD == true) {
         vars.SpLitON = false;
+        vars.bossDEAD = false;
         return true;
-    }
+    }}
     }//split on colum
     if (settings["Bomb"] && current.Number_of_bombs == old.Number_of_bombs - 1 && current.start == 0xFF) return true;//split bomb
     if (current.bossHP1 == 0x0A && current.bossHP2 == 0x0A && current.bossHP3 == 0x0A && current.bomb_time == 0x10 && current.start == 0xFF) vars.LastBoss = true;
